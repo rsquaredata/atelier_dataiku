@@ -49,10 +49,15 @@ Un bonus en fin d'atelier propose d'explorer l'intégration d'un LLM Recipe dans
 ## Liens utiles
 
 [Dataiku](https://www.dataiku.com/)
+
 [Dataiku Academy](https://academy.dataiku.com/)
+
 [Dataiku Documentation](https://doc.dataiku.com/dss/latest/)
+
 [Présentation de l'aterlier](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)
+
 Jeu de données Scoring 
+
 Jeu de données Fraude
 
 ---
