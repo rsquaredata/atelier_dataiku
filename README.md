@@ -56,9 +56,9 @@ Un bonus en fin d'atelier propose d'explorer l'intégration d'un LLM Recipe dans
 
 [Présentation de l'atelier](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)
 
-Jeu de données Scoring 
+[Jeu de données Scoring](https://drive.google.com/file/d/1OdeW5F1lQZLGxk5RcTRPnXKO63Y6DqjD/view?usp=drivesdk)
 
-Jeu de données Fraude
+[Jeu de données Fraude](https://drive.google.com/file/d/1zXWCW8hSSDz8wRZ1rvrD-3nqExQTtLp_/view?usp=drivesdk)
 
 ---
 
