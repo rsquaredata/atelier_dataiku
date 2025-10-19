@@ -1,7 +1,7 @@
-# Atelier Dataiku – Sujet et Corrigé (v5)
+# Atelier Dataiku
 
 Durée : 2h00  
-Objectif : Découvrir les fonctions essentielles de **Dataiku DSS Cloud** à travers deux cas métiers en finance.
+Objectif : Découvrir les fonctions essentielles de **Dataiku Cloud** à travers deux cas métiers en finance.
 
 ---
 
