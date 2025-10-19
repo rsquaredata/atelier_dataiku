@@ -54,7 +54,7 @@ Un bonus en fin d'atelier propose d'explorer l'intégration d'un LLM Recipe dans
 
 [Dataiku Documentation](https://doc.dataiku.com/dss/latest/)
 
-[Présentation de l'aterlier](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)
+[Présentation de l'atelier](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)
 
 Jeu de données Scoring 
 
