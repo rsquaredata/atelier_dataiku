@@ -1,10 +1,10 @@
-# Atelier Dataiku Cloud – Master 2 SISE
+# Atelier Dataiku – Master 2 SISE
 
 ## Présentation générale
 
-Ce dépôt constitue le support officiel de l'**atelier Dataiku Cloud**, élaboré dans le cadre du **Master 2 Statistique et Informatique pour la Science des Données (SISE)** de l'**Université Lumière Lyon 2**.
+Ce dépôt constitue le support officiel de l'**atelier Dataiku**, élaboré dans le cadre du **Master 2 Statistique et Informatique pour la Science des Données (SISE)** de l'**Université Lumière Lyon 2**.
 
-L'objectif de cet atelier est d'offrir une **mise en pratique complète des outils Dataiku** à travers des études de cas inspirées de problématiques financières réelles. Il articule des dimensions techniques (préparation, modélisation, automatisation) et méthodologiques (explicabilité, gouvernance, MLOps, IA générative).
+L'objectif de cet atelier est d'offrir une **mise en pratique des outils Dataiku** à travers des études de cas inspirées de problématiques financières réelles. Il articule des dimensions techniques (préparation, modélisation, automatisation) et méthodologiques (explicabilité, gouvernance, MLOps, IA générative).
 
 ---
 
@@ -74,10 +74,10 @@ Le fichier `fx_rates_sample.csv` est issu d'un export authentique de la Banque c
 
 ---
 
-## Remarques et prolongements
+## Remarques
 
 Certaines fonctionnalités avancées de Dataiku (plugins externes, versioning collaboratif, scénarios complexes, gouvernance multi-projets) ne sont pas couvertes dans cet atelier.  
-Elles sont néanmoins introduites conceptuellement dans le **Module 3 – Automatisation, Agents et LLM**, pour préparer aux pratiques du MLOps moderne et à l'intégration de l'**IA générative** dans les chaînes analytiques.
+Elles sont néanmoins introduites conceptuellement dans le **Module 3 – Automatisation, Agents et LLM** en guise d'introduction aux pratiques du MLOps moderne et à l'intégration de l'**IA générative** dans les chaînes analytiques.
 
 --- 
 Usage strictement académique et non commercial.
