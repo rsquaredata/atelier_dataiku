@@ -23,7 +23,7 @@ L'objectif de cet atelier est d'offrir une **mise en pratique des outils Dataiku
 
 - Compte actif sur [**Dataiku Cloud (essai gratuit)**](https://www.dataiku.com/product/get-started/) (validité 14 jours).  
 - Navigateur web à jour (Chrome, Firefox ou Safari).  
-- Connaissances de base en Python, R ou SQL. 
+- Connaissances de base en programmation (Python, R, SQL). 
 - Accès internet stable et capacité de téléchargement de fichiers CSV.
 
 ---
