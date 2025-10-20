@@ -59,9 +59,9 @@ Le fichier `fx_rates_sample.csv` est issu d'un export authentique de la Banque c
 - [**Site officiel Dataiku**](https://www.dataiku.com/)  
 - [**Dataiku Academy**](https://academy.dataiku.com/)  
 - [**Documentation Dataiku**](https://doc.dataiku.com/dss/latest/)  
-- [**Présentation Canva de l'atelier**](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)  
-- [**Jeu de données Scoring – Google Drive**](https://drive.google.com/file/d/1OdeW5F1lQZLGxk5RcTRPnXKO63Y6DqjD/view?usp=drivesdk)  
-- [**Jeu de données Fraude – Google Drive**](https://drive.google.com/file/d/1zXWCW8hSSDz8wRZ1rvrD-3nqExQTtLp_/view?usp=drivesdk)
+- [**Slides de présentation de l'atelier**](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)  
+- [**Jeu de données Scoring - Google Drive**](https://drive.google.com/file/d/1OdeW5F1lQZLGxk5RcTRPnXKO63Y6DqjD/view?usp=drivesdk)  
+- [**Jeu de données Fraude - Google Drive**](https://drive.google.com/file/d/1zXWCW8hSSDz8wRZ1rvrD-3nqExQTtLp_/view?usp=drivesdk)
 
 ---
 
