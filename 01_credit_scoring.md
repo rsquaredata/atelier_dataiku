@@ -171,16 +171,16 @@ d. Moyenne : ≈ 7.15 ; écart-type : ≈ 0.88
 
 ### Questions
 
-a. À votre avis, quelle métrique faut-il privilégier en contexte bancaire ?
-b. Y a-t-il des variables problématiques ?
-b. Quel algorithme offre le meilleur compromis Precision/Recall ?
+a. À votre avis, quelle métrique faut-il privilégier en contexte bancaire ?  
+b. Y a-t-il des variables problématiques ?  
+b. Quel algorithme offre le meilleur compromis Precision/Recall ?  
 
 <details>
   <summary><strong>💡</strong></summary>
 
-a. Recall si le but est de minimiser les faux négatifs (ne pas accorder de prêt risqué)
-b. - **Éthique** : attention aux variables sensibles (`sex`, `age`)
-b. XGBoost ou Random Forest selon les runs
+a. Recall si le but est de minimiser les faux négatifs (ne pas accorder de prêt risqué)  
+b. - **Éthique** : attention aux variables sensibles (`sex`, `age`)  
+b. XGBoost ou Random Forest selon les runs  
 
 </details>
 
