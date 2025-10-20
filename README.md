@@ -28,7 +28,7 @@ L'objectif de cet atelier est d'offrir une **mise en pratique complète des outi
 
 ---
 
-## Organisation des modules
+## Organisation de l'atelier
 
 L'atelier est structuré en quatre modules progressifs.
 
