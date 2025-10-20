@@ -107,7 +107,7 @@ d. Quelles relations observe-t-on entre `amount`, `age` et `duration` ?
 
 a. `amount` (très asymétrique)  
 b. `duration` (corrélation négative modérée avec `credit_risk`)  
-c. Aucune valeur manquante 
+c. Aucune valeur manquante  
 d. `age` faiblement positif avec bon crédit ; `amount` et `duration` associés à plus de défauts quand ils augmentent
 
 </details>
