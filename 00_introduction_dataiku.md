@@ -91,16 +91,16 @@ Les bibliothèques Python ou R nécessaires sont gérées par **code environneme
 
 ---
 
-### 🧩 Comparatif — Dataiku vs autres outils de l’écosystème data
+### 🧩 Comparatif — Dataiku vs autres outils de l'écosystème data
 
 | Outil | Type principal | Approche | Niveau de transparence | Points forts | Limites |
 |--------|----------------|-----------|-------------------------|---------------|----------|
 | **Dataiku** | Plateforme de **data science** et **ML** | **Whitebox** (no-code & code-friendly) | 🔍 Très élevé : traçabilité du Flow, explicabilité des modèles, logs, gouvernance | Collaboration, traçabilité, intégration Python/R, gouvernance | Nécessite un minimum de structure de projet |
-| **Power BI** | Outil de **Business Intelligence (BI)** | **Semi-whitebox** (formules DAX visibles mais moteur partiellement opaque) | 📊 Moyenne : scripts Power Query transparents, moteur interne fermé | Visualisations interactives, intégration Microsoft, facilité d’usage | Explicabilité faible, logique de calcul fermée |
+| **Power BI** | Outil de **Business Intelligence (BI)** | **Semi-whitebox** (formules DAX visibles mais moteur partiellement opaque) | 📊 Moyenne : scripts Power Query transparents, moteur interne fermé | Visualisations interactives, intégration Microsoft, facilité d'usage | Explicabilité faible, logique de calcul fermée |
 | **Qlik Sense / Qlik View** | **BI associatif** | **Semi-whitebox** (scripts ETL visibles, moteur propriétaire opaque) | ⚙️ Moyenne : logique de chargement lisible, algorithme associatif non documenté | Analyse associative rapide, exploration intuitive | Opaque sur le moteur interne et calculs mémoire |
-| **Apache Hop** | Outil **ETL open source** | **Whitebox (open source)** | 🧱 Élevée : workflows et scripts entièrement visibles | Transparence, flexibilité, extensibilité | Pas d’interface analytique ni AutoML |
-| **Apache Doris** | **Base analytique distribuée (OLAP)** | **Whitebox (open source)** | 🔬 Élevée côté code source, mais faible côté interface utilisateur | Performances massives, SQL analytique, open source | Réservé aux profils techniques, pas d’interface visuelle |
-| **Apache NiFi** | Outil d’**ingestion et d’orchestration de flux** | **Whitebox (open source)** | ⚙️ Élevée : dataflows visibles, provenance et traçabilité natives | Ingestion en temps réel, connecteurs multiples, intégration avec Dataiku via API | Pas de moteur analytique intégré, courbe d’apprentissage initiale |
+| **Apache Hop** | Outil **ETL open source** | **Whitebox (open source)** | 🧱 Élevée : workflows et scripts entièrement visibles | Transparence, flexibilité, extensibilité | Pas d'interface analytique ni AutoML |
+| **Apache Doris** | **Base analytique distribuée (OLAP)** | **Whitebox (open source)** | 🔬 Élevée côté code source, mais faible côté interface utilisateur | Performances massives, SQL analytique, open source | Réservé aux profils techniques, pas d'interface visuelle |
+| **Apache NiFi** | Outil d'**ingestion et d'orchestration de flux** | **Whitebox (open source)** | ⚙️ Élevée : dataflows visibles, provenance et traçabilité natives | Ingestion en temps réel, connecteurs multiples, intégration avec Dataiku via API | Pas de moteur analytique intégré, courbe d'apprentissage initiale |
 
 ---
 
@@ -207,14 +207,14 @@ Chaque nœud doit être connecté et nommé ainsi :
 
 ## 5. Transparence et approche « whitebox »
 
-L’un des intérêts majeurs de Dataiku réside dans son approche **whitebox** :  
+L'un des intérêts majeurs de Dataiku réside dans son approche **whitebox** :  
 plutôt que de masquer la logique interne des traitements, la plateforme rend chaque opération **lisible, traçable et reproductible**.
 
 - Les **recipes** sont documentées et visualisables dans le **Flow**, garantissant la transparence du pipeline.  
-- Les **modèles de machine learning** exposent leurs **coefficients, métriques et graphiques d’explicabilité**.  
-- Les **scenarios** et **logs d’exécution** permettent de suivre précisément les actions réalisées.  
+- Les **modèles de machine learning** exposent leurs **coefficients, métriques et graphiques d'explicabilité**.  
+- Les **scenarios** et **logs d'exécution** permettent de suivre précisément les actions réalisées.  
 
-Cette philosophie s’oppose aux outils “blackbox” qui produisent un résultat sans permettre de comprendre le cheminement.  
+Cette philosophie s'oppose aux outils “blackbox” qui produisent un résultat sans permettre de comprendre le cheminement.  
 Elle est particulièrement cruciale en **finance**, où la **traçabilité, la justification et la gouvernance des modèles** sont des obligations réglementaires.
 
 ---
