@@ -1,68 +1,71 @@
-# Atelier Dataiku – M2 SISE
+# Atelier Dataiku Cloud – Master 2 SISE
 
-## Présentation
+## Présentation générale
 
-Ce dépôt contient le support d'un atelier technique dédié aux outils data réalisé dans le cadre du Master 2 Statistique et Informatique pour la Science des Données (SISE) à l'Université Lumière Lyon 2.
+Ce dépôt constitue le support officiel de l’**atelier Dataiku Cloud**, élaboré dans le cadre du **Master 2 Statistique et Informatique pour la Science des Données (SISE)** de l’**Université Lumière Lyon 2**.
 
-L'atelier vise à initier les étudiants à la plateforme **Dataiku** à travers des cas pratiques centrés sur l'analyse de données bancaires.
+L’objectif de cet atelier est d’offrir une **mise en pratique complète des outils Dataiku** à travers des études de cas inspirées de problématiques financières réelles. Il articule des dimensions techniques (préparation, modélisation, automatisation) et méthodologiques (explicabilité, gouvernance, MLOps, IA générative).
 
 ---
 
 ## Objectifs pédagogiques
 
-- Découvrir l'interface et le fonctionnement de Dataiku (flows, recettes, scénarios)
-- Mettre en œuvre un processus **ETL** complet : ingestion, nettoyage, enrichissement des données
-- Réaliser une **analyse exploratoire** et une **visualisation des données**
-- Expérimenter l'entraînement automatique de modèles via **AutoML**
-- Comprendre les bases de la **mise en production** via l'automatisation de flux (MLOps)
+- Comprendre les principes fondamentaux de la plateforme **Dataiku** et son positionnement dans l’écosystème data.  
+- Mettre en œuvre un **processus ETL** complet : ingestion, préparation, enrichissement et visualisation de données.  
+- Expérimenter la **modélisation supervisée** (scoring de crédit, détection de fraude) via l’interface AutoML et les recettes visuelles.  
+- Appliquer les concepts de **classification déséquilibrée**, d’**évaluation de modèles** et d’**interprétabilité**.  
+- Initier les étudiants aux fondements du **MLOps**, de l’**automatisation** et des **LLM Recipes** dans Dataiku Cloud.  
+- Développer une réflexion critique sur les apports et les limites de la data science industrialisée.
 
 ---
 
-## Prérequis
+## Prérequis techniques
 
-- Créer un compte gratuit sur [Dataiku Cloud](https://www.dataiku.com/product/get-started/) (valable 14 jours)
-- Navigateur web à jour (Chrome, Firefox, Safari,...)
-- Connaissances de base en programmation en Python, R ou SQL
+- Compte actif sur [**Dataiku Cloud (essai gratuit)**](https://www.dataiku.com/product/get-started/) (validité 14 jours).  
+- Navigateur web à jour (Chrome, Firefox ou Safari).  
+- Connaissances de base en Python, R ou SQL. 
+- Accès internet stable et capacité de téléchargement de fichiers CSV.
 
 ---
 
-## Contenu de l’atelier
+## Organisation des modules
 
-L'atelier est réalisé à l'aide de **Dataiku Cloud**. Aucune installation locale n'est requise : chaque participant veille à créer un compte en ligne en amont de l'atelier pour accéder à un environnement isolé prêt à l’emploi.
+L’atelier est structuré en quatre modules progressifs.
 
-**Deux études de cas** représentatives de problématiques courantes dans le secteur bancaire servent de fil conducteur :
+| Module | Intitulé | Contenu principal |
+|---------|-----------|------------------|
+| [**Module 0 – Introduction à Dataiku Cloud**](modules/00_introduction_dataiku_v2.md) | Démonstration guidée (taux de change ECB), création de projet et exploration de l’interface. |
+| [**Module 1 – Scoring de crédit**](modules/01_credit_scoring.md) | Modélisation supervisée (classification binaire), exploration, préparation et interprétation. |
+| [**Module 2 – Détection de fraude**](modules/02_fraud_detection.md) | Traitement d’un jeu de données déséquilibré, XGBoost, métriques avancées et tableau de bord. |
+| [**Module 3 – Automatisation, Agents et LLM**](modules/03_automation_agents_llm.md) | Introduction au MLOps, automatisation de pipelines, agents de surveillance et explicabilité par LLM. |
 
-1. **Scoring client**
-2. **Détection de fraudes**
+---
 
-Chaque exercice mobilise les fonctionnalités principales de Dataiku :
+## Jeux de données
 
-- Importation de données (CSV, Excel)
-- Préparation des données (recettes visuelles et codées)
-- Création de modèles prédictifs (AutoML)
-- Tableau de bord et visualisations
+| Fichier | Description | Hébergement |
+|----------|--------------|--------------|
+| `fx_rates_sample.csv` | Échantillon réel de taux de change publiés par la Banque centrale européenne (20/10/2025). | GitHub `/datasets/` |
+| `credit_scoring.csv` | Données anonymisées de scoring client. | Google Drive |
+| `creditcard.csv` | Données de transactions pour la détection de fraude. | Google Drive |
 
-Un bonus en fin d'atelier propose d'explorer l'intégration d'un LLM Recipe dans un projet Dataiku.
+Les fichiers `credit_scoring.csv` et `creditcard.csv` proviennent de jeux publics sous licence **CC BY-NC-SA**, et sont réservés à un usage pédagogique.  
+Le fichier `fx_rates_sample.csv` est issu d’un export authentique de la Banque centrale européenne, reproduit ici à des fins démonstratives.
 
 ---
 
 ## Liens utiles
 
-[Dataiku](https://www.dataiku.com/)
-
-[Dataiku Academy](https://academy.dataiku.com/)
-
-[Dataiku Documentation](https://doc.dataiku.com/dss/latest/)
-
-[Présentation de l'atelier](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)
-
-[Jeu de données Scoring](https://drive.google.com/file/d/1OdeW5F1lQZLGxk5RcTRPnXKO63Y6DqjD/view?usp=drivesdk)
-
-[Jeu de données Fraude](https://drive.google.com/file/d/1zXWCW8hSSDz8wRZ1rvrD-3nqExQTtLp_/view?usp=drivesdk)
+- [**Site officiel Dataiku**](https://www.dataiku.com/)  
+- [**Dataiku Academy**](https://academy.dataiku.com/)  
+- [**Documentation Dataiku**](https://doc.dataiku.com/dss/latest/)  
+- [**Présentation Canva de l’atelier**](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)  
+- [**Jeu de données Scoring – Google Drive**](https://drive.google.com/file/d/1OdeW5F1lQZLGxk5RcTRPnXKO63Y6DqjD/view?usp=drivesdk)  
+- [**Jeu de données Fraude – Google Drive**](https://drive.google.com/file/d/1zXWCW8hSSDz8wRZ1rvrD-3nqExQTtLp_/view?usp=drivesdk)
 
 ---
 
-## Membres de l’équipe
+## Équipe
 
 - **Constantin Rey-Coquais**
 - **Cyrille Pecnik**
@@ -71,8 +74,10 @@ Un bonus en fin d'atelier propose d'explorer l'intégration d'un LLM Recipe dans
 
 ---
 
-## Remarques
+## Remarques et prolongements
 
-Certaines fonctionnalités avancées de Dataiku (plugins, scénarios complexes, versioning, documentation collaborative) ne sont pas couvertes dans cet atelier, mais sont mentionnées à titre informatif.
+Certaines fonctionnalités avancées de Dataiku (plugins externes, versioning collaboratif, scénarios complexes, gouvernance multi-projets) ne sont pas couvertes dans cet atelier.  
+Elles sont néanmoins introduites conceptuellement dans le **Module 3 – Automatisation, Agents et LLM**, pour préparer aux pratiques du MLOps moderne et à l’intégration de l’**IA générative** dans les chaînes analytiques.
 
----
+--- 
+Usage strictement académique et non commercial.
