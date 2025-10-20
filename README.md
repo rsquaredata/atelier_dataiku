@@ -14,7 +14,7 @@ L'objectif de cet atelier est d'offrir une **mise en pratique complète des outi
 - Mettre en œuvre un **processus ETL** complet : ingestion, préparation, enrichissement et visualisation de données.  
 - Expérimenter la **modélisation supervisée** (scoring de crédit, détection de fraude) via l'interface AutoML et les recettes visuelles.  
 - Appliquer les concepts de **classification déséquilibrée**, d'**évaluation de modèles** et d'**interprétabilité**.  
-- Initier les étudiants aux fondements du **MLOps**, de l'**automatisation** et des **LLM Recipes** dans Dataiku Cloud.  
+- Initier les participants aux fondements du **MLOps**, de l'**automatisation** et des **LLM Recipes** dans Dataiku Cloud.  
 - Développer une réflexion critique sur les apports et les limites de la data science industrialisée.
 
 ---
