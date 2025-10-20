@@ -150,9 +150,9 @@ d. Quelle est la moyenne et l'écart-type de `log_amount` ?
 <details>
   <summary><strong>💡</strong></summary>
 
-a. 26 
+a. 26  
 b. La transformation logarithmique  
-c. `log1p` calcule $$\log(1+x)$$ : il gère $$x=0$$ et stabilise les très petites valeurs, utile en finance (micro-paiements, taux d'intérêt, frais proches de 0)  
+c. `log1p` calcule $\log(1+x)$ : il gère $x=0$ et stabilise les très petites valeurs, utile en finance (micro-paiements, taux d'intérêt, arrondis, ...)  
 d. Moyenne : ≈ 7.15 ; écart-type : ≈ 0.88
 
 </details>
