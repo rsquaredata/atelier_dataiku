@@ -201,11 +201,11 @@ b. Comment le seuil influence-t-il la matrice de confusion ?
 <details>
   <summary><strong>💡</strong></summary>
 
-a. `duration` ressort souvent en tête  
+a. `duration`  
 b. Augmenter le seuil = augmente les FP (perte potentielle de clients) / baisser le seuil = augmente les FN (risque de défaut) → seuil à déterminer selon la tolérance au risque.
 
 **Exemple de synthèse pour le dashboard** : 
-Ce modèle de scoring prédit le risque de défaut avec une AUC de 0,82 (c'est bien ?). Les variables importantes sont la durée et le montant du prêt, toutes deux corrélées négativement à la probabilité de remboursement. Ce modèle constitue un outil d'aide à la décision pour les conseillers.
+Ce modèle de scoring prédit le risque de défaut avec une AUC de 0,82 (avis ?). Les variables importantes sont la durée et le montant du prêt, toutes deux corrélées négativement à la probabilité de remboursement. Ce modèle constitue un outil d'aide à la décision pour les conseillers.
 
 ### Vérification du Flow
 
