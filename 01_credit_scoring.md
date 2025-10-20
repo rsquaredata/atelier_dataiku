@@ -43,7 +43,7 @@ Régularisation L1 (Lasso) : $\lambda\sum|\beta_j|$ ; L2 (Ridge) : $\lambda\sum\
 ### Corrélation et colinéarité
 
 $$
-r_{XY}=\frac{\operatorname{Cov}(X,Y)}{s_X s_Y},\quad |r|>0{,}8 \Rightarrow \text{variables redondantes.}
+r_{XY}=\frac{\mathrm{Cov}(X,Y)}{s_X s_Y},\quad |r|>0{,}8 \Rightarrow \text{variables redondantes.}
 $$
 
 ### Glossaire intégré
