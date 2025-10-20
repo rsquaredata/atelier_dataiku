@@ -1,4 +1,4 @@
-# Module 1 - Scoring de crédit : exploration et modélisation supervisée (Dataiku Cloud - essai gratuit)
+# Module 1 - Scoring de clients : exploration et modélisation supervisée
 
 ## 1. Introduction et objectifs
 
