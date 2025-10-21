@@ -122,6 +122,8 @@ b. Le réentraînement périodique permet de s'adapter aux évolutions des donn�
 
 </details>
 
+> **MLOps - Bonne pratique** : Les **Scenarios** dans Dataiku peuvent être configurés pour ne s’exécuter qu’en cas de succès des étapes précédentes. Cela permet d’éviter des réentraînements en cascade en cas d’erreur et renforce la fiabilité du pipeline.
+
 ---
 
 ### B. Création d'un Agent avec LLM Recipe
@@ -137,7 +139,8 @@ Objectif : créer un agent capable de produire automatiquement une synthèse tex
 3. Dans la LLM Recipe :
    - Prompt :
      ```
-     Vous êtes un analyste conformité. Résumez en quelques lignes pourquoi cette transaction est considérée comme potentiellement frauduleuse, en vous appuyant sur les variables les plus importantes du modèle.
+     Vous êtes un analyste conformité.
+     Résumez en quelques lignes pourquoi cette transaction est considérée comme potentiellement frauduleuse, en vous appuyant sur les variables les plus importantes du modèle.
      ```
    - Entrée : `fraud_prediction`
    - Sortie : `risk_explanation`
@@ -163,6 +166,8 @@ b. L'agent automatise la décision post-prédiction, ce qui étend la chaîne ML
 c. Risques : hallucinations, biais, fuites de données sensibles. D'où l'importance du contrôle humain et des garde-fous pour la science et la gouvernance des données !
 
 </details>
+
+> **Dépendance aux APIs LLM** : Les **LLM Recipes** reposent sur des services externes (OpenAI, Mistral, etc.). Cela implique des contraintes de confidentialité, de coût et de souveraineté : une clé API exposée ou un quota dépassé peut interrompre la chaîne. Toujours prévoir un *fallback* (scénario de repli) en cas d'indisponibilité de l'API.
 
 ---
 
@@ -190,6 +195,8 @@ c. Quelle serait la réaction appropriée en cas de dérive détectée ?
 a. Le modèle et le LLM sont deux points de défaillance : si l'un faiblit, la chaîne complète est compromise.  
 b. Baisse du Recall, hausse du taux d'erreur, variation des distributions ou latence excessive de l'API.  
 c. Examiner les logs, réentraîner le modèle si nécessaire, ou ajuster les seuils et prompts.
+
+> **Exemple - Détection d’une dérive : une variation anormale du Recall accompagnée d’un déplacement de la distribution des variables (`amount`, `hour`) peut révéler une dérive des données. Dans Dataiku, ce suivi se met en place via le **Model Evaluation Store** couplé à un **Scenario** de contrôle automatique.
 
 ---
 
