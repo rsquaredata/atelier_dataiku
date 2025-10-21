@@ -183,14 +183,14 @@ d. Moyenne : ≈ 7.15 ; écart-type : ≈ 0.88
 4. **Design → Algorithms** : cocher Logistic Regression, Random Forest, XGBoost
 5. **Result → Train → Start**
 6. **Performance** : observer Accuracy, Recall, Precision, F1, AUC
-7. **Deploy → Create Scoring recipe → Output : risk_predictions → Create → Run**
-8. Une fois le lancement terminé, vous pouvez revenir dans **Design** changer les paramètres, les modèles,etc.. afin d'essayer d'obtenir de meilleurs mesures, vous pouvez ensuite naviguer entre sessions, models et tables pour comparer les différents modèles essayés
+7. Une fois le lancement terminé, vous pouvez revenir dans **Design** changer les paramètres, les modèles,etc.. afin d'essayer d'obtenir de meilleurs mesures, vous pouvez ensuite naviguer entre sessions, models et tables pour comparer les différents modèles essayés
+8. Cliquez sur le modèle que vous souhaitez retenir puis : **Deploy**
 
 ### Questions
 
 a. À votre avis, quelle métrique faut-il privilégier en contexte bancaire ?  
 b. Y a-t-il des variables problématiques ?  
-b. Quel algorithme offre le meilleur compromis Precision/Recall ?  
+c. Quel algorithme offre le meilleur compromis Precision/Recall ?  
 
 <details>
   <summary><strong>💡</strong></summary>
