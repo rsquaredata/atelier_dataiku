@@ -170,7 +170,7 @@ c. Risques : hallucinations, biais, fuites de données sensibles. D'où l'import
 
 ---
 
-### C. Supervision, alertes et tableau de bord (A tester)
+### C. Supervision, alertes et tableau de bord
 
 1. Créer un dashboard de supervision : **Dashboard -> llm_performance**
    - Ajouter :
