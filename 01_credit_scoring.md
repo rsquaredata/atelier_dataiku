@@ -28,7 +28,7 @@ Objectifs pédagogiques :
 
 $$P(y_i=1 \mid X_i)=\frac{1}{1+e^{-(\beta_0+\beta_1x_{i1}+\ldots+\beta_p x_{ip})}}$$
 
-Chaque coefficient $\beta_j$ reflète l'influence de la variable $x_j$ sur la probabilité d'appartenir à la classe 1.
+Chaque coefficient $\beta_j$ reflète l'influence de la variable explicative $x_j$ sur la probabilité d'appartenir à la classe 1 
 Régularisation L1 (Lasso) : $\lambda\sum|\beta_j|$ ; L2 (Ridge) : $\lambda\sum\beta_j^2$
 
 ### Évaluation du modèle
@@ -112,6 +112,8 @@ c. Aucune valeur manquante
 d. `age` faiblement positif avec bon crédit ; `amount` et `duration` associés à plus de défauts quand ils augmentent
 
 </details>
+
+> **Astuce - Bonne pratique** : après avoir construit plusieurs recipes de préparation (Prepare, Code, Join…), penser à nommer clairement les sorties et à activer la documentation automatique dans le Flow (**More actions → Edit project documentation**). En fin de projet, cette documentation sert de traçabilité interne et peut être exportée comme rapport d’audit.
 
 ---
 
@@ -218,12 +220,7 @@ risk → risk_prepared → (code) → risk_predictions → risk_dashboard
 
 Si un dataset intermédiaire est créé (par exemple `risk_prepared_code`), il doit être l'entrée de la recette de scoring.
 
-</details>
-
 ---
-
-<details>
-  <summary><strong>💡</strong></summary>
    
 ## Perspective métier
 
@@ -244,3 +241,7 @@ En contexte bancaire :
 - Hastie, Tibshirani, Friedman - *The Elements of Statistical Learning* (PDF libre) : <https://hastie.su.domains/ElemStatLearn/>
 
 </details>
+
+> **Astuce** : tout projet Dataiku peut être exporté sous forme de *bundle* (**Administration → Bundles → Export**) pour être réutilisé sur un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer.
+
+---
