@@ -1,6 +1,6 @@
 # Module 3 - Automatisation, Agents et LLM (Diet MLOps)
 
-Ce module clôt l'atelier en abordant la mise en production simplifiée des projets Dataiku — une approche que nous appellerons ici, par commodité, « Diet MLOps » (c'est plus sympa que Light ou Zero).
+Ce module clôt l'atelier en abordant la mise en production simplifiée des projets Dataiku — une approche que nous appellerons ici, par commodité, « Diet MLOps » (plus sympathique que *Light* ou *Zero*).  
 L'idée est d'en présenter les principes essentiels sans entrer dans la complexité d'une infrastructure complète de production.
 
 L'objectif du module est de montrer comment :
@@ -13,7 +13,7 @@ Cette approche illustre comment Dataiku permet de relier, dans un même environn
 ---
 
 <details>
-  <summary><strong>💡</strong></summary>
+  <summary><strong></strong></summary>
 
 ## Rappels théoriques - concepts clés
 
@@ -28,12 +28,12 @@ Un pipeline MLOps typique comprend:
 5. Supervision et alertes
 6. Itération et réentraînement
 
-Bénéfices principaux: automatisation, traçabilité, reproductibilité et gouvernance du modèle. Dataiku intègre ces fonctions via les **Scenarios**, le **Model Versioning** et les **Metrics Stores**.
+Bénéfices principaux : automatisation, traçabilité, reproductibilité et gouvernance du modèle. Dataiku intègre ces fonctions via les **Scenarios**, le **Model Versioning** et les **Metrics Stores**.
 
 ---
 
-### Automatisation: du pipeline au scénario
-Un scénario Dataiku est une suite d'actions exécutées automatiquement selon un déclencheur (horaire, changement de dataset, exécution manuelle, etc.). Il permet par exemple de:
+### Automatisation : du pipeline au scénario
+Un scénario Dataiku est une suite d'actions exécutées automatiquement selon un déclencheur (horaire, changement de dataset, exécution manuelle, etc.). Il permet par exemple de :
 - actualiser les données brutes;
 - réentraîner un modèle existant;
 - lancer des prédictions;
@@ -45,32 +45,32 @@ L'automatisation réduit le risque d'erreur humaine et garantit la cohérence du
 
 ### Agents intelligents et orchestration
 Les Agents sont des entités logicielles capables d'exécuter des tâches ou de répondre à des requêtes en utilisant des données et des modèles internes.
-Dans Dataiku, ils peuvent:
+Dans Dataiku, ils peuvent :
 - appeler des modèles prédictifs existants (par ex. `fraud_xgboost_model`);
 - utiliser une **LLM Recipe** pour interagir en langage naturel;
 - produire un rapport ou exporter des cas à vérifier.
 
-Ils combinent plusieurs briques: automatisation, accès contextuel aux données, et interface conversationnelle.
+Ils combinent plusieurs briques : automatisation, accès contextuel aux données, et interface conversationnelle.
 
 ---
 
 ### LLM: modèles de langage et intégration API
 Les LLM (Large Language Models) sont des modèles pré-entraînés sur de grandes quantités de texte, capables de générer, résumer ou reformuler du langage naturel. Dataiku permet d'intégrer ces modèles via une **LLM Recipe**, en connectant une API externe comme Mistral, OpenAI ou Claude.
 
-Principe:
+Principe :
 1. Créer un connecteur d'API sécurisé (clé privée).
 2. Rédiger une prompt adaptée au contexte métier.
 3. Exécuter la recette pour générer un texte ou une décision.
 
-Exemple: faire résumer par le LLM les transactions suspectes pour produire un rapport automatique.
+Exemple : faire résumer par le LLM les transactions suspectes pour produire un rapport automatique.
 
 ---
 
 ### Supervision et surveillance des modèles
 Une fois en production, les modèles doivent être surveillés pour détecter les dérives:
-- Data drift: changement dans la distribution des variables.
-- Concept drift: changement de la relation entre les variables et la cible.
-- Performance drift: baisse du Recall, de la Precision ou du F1-score.
+- Data drift : changement dans la distribution des variables.
+- Concept drift : changement de la relation entre les variables et la cible.
+- Performance drift : baisse du Recall, de la Precision ou du F1-score.
 
 Dataiku propose un Model Evaluation Store pour centraliser et comparer les métriques au fil du temps.
 
@@ -80,7 +80,7 @@ Dataiku propose un Model Evaluation Store pour centraliser et comparer les métr
 | Terme | Définition concise |
 |-------|--------------------|
 | MLOps | Pratiques visant à automatiser et fiabiliser le cycle de vie des modèles ML |
-| Pipeline | Enchaînement de tâches: préparation -> modélisation -> prédiction -> surveillance |
+| Pipeline | Enchaînement de tâches : préparation -> modélisation -> prédiction -> surveillance |
 | Scénario | Suite d'actions exécutées automatiquement dans Dataiku |
 | Agent | Entité logicielle autonome capable d'agir ou de répondre à une demande |
 | LLM | Modèle de langage massif, utilisé pour générer ou interpréter du texte |
@@ -94,18 +94,18 @@ Dataiku propose un Model Evaluation Store pour centraliser et comparer les métr
 ## 2. TP - Automatisation et intégration Mistral API
 
 ### A. Création d'un scénario d'automatisation
-Objectif: créer un pipeline automatique de mise à jour et d'évaluation du modèle de détection de fraude.
+Objectif : créer un pipeline automatique de mise à jour et d'évaluation du modèle de détection de fraude.
 
 1. Dans le projet, ouvrir **Scenarios -> + New Scenario**.
-   - Nom: `auto_fraud_pipeline`
-   - Trigger: **Manually** (pour commencer)
-2. Ajouter une étape: **+ Step -> Build / Dataset(s)**
-   - Sélectionner les datasets: `fraud_hour`, `fraud_sampled`, `fraud_prediction`
-3. Ajouter une étape: **+ Step -> Train model(s)**
+   - Nom : `auto_fraud_pipeline`
+   - Trigger : **Manually** (pour commencer)
+2. Ajouter une étape : **+ Step -> Build / Dataset(s)**
+   - Sélectionner les datasets : `fraud_hour`, `fraud_sampled`, `fraud_prediction`
+3. Ajouter une étape : **+ Step -> Train model(s)**
    - Sélectionner le modèle `fraud_xgboost_model`
-4. Ajouter une étape: **+ Step -> Run Scoring recipe(s)**
+4. Ajouter une étape : **+ Step -> Run Scoring recipe(s)**
    - Choisir la recette `fraud_prediction`
-5. Optionnel: **+ Step -> Send message**
+5. **+ Step -> Send message**
    - Destinataire : votre e-mail
    - Message  : "Pipeline terminé : modèle fraud réentraîné et scoré."
 6. Enregistrer le scénario puis exécuter : **Run Now**
@@ -211,6 +211,6 @@ La mise en production d'un pipeline Dataiku intégrant des modèles et des LLM e
 - Documentation Dataiku - Scenarios : https ://doc.dataiku.com/dss/latest/scenarios/index.html
 - Dataiku - Agents and LLM Integrations : https ://doc.dataiku.com/dss/latest/agents/index.html
 - Mistral API Reference : https://docs.mistral.ai
-- Dataiku Academy - MLOps Concepts: https://academy.dataiku.com
+- Dataiku Academy -  MLOps Concepts : https://academy.dataiku.com
 
 </details>
