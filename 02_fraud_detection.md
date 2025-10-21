@@ -93,7 +93,7 @@ c. Quelle est la proportion de transactions frauduleuses ?
   <summary><strong>💡</strong></summary>
 
 a. La variable cible est `Class`. On l'a renommée en `is_fraud`, pourquoi d'ailleurs ?   
-b. 285000, 31.  
+b. 284807, 31.  
 c. 0.17 % de fraudes, soit un fort déséquilibre.  
 
 </details>
