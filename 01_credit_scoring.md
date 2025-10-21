@@ -69,14 +69,14 @@ $$r_{XY}=\frac{\mathrm{Cov}(X,Y)}{s_X s_Y},\quad |r|>0{,}8 \Rightarrow \text{var
 2. Créer un nouveau projet : **+ New Project → Blank project**
    - Project name : `Dataiku_Bank_[PrenomNom]`
    - Key : `DB_[initiales]`
-3. Importer le fichier : **Flow → + Dataset → Files → Upload your files** → sélectionner `credit_scoring.csv` → Create
-4. Renommer le dataset : **More actions (...) → Rename → risk**
-5. Vérifier le schéma : **Schema →** vérifier les types (numérique vs catégoriel) → Save
+3. Importer le fichier : **Flow (vous y êtes déjà normalement) → + Add Item (en haut à droite) → Upload → Select Files** → sélectionner `credit_scoring.csv` → Create
+4. Renommer le dataset : **Actions (à droite) → Rename → risk**
+5. Vérifier le schéma : **Onglet "Settings"(dans le dataset) → Schema →** vérifier les types (numérique vs catégoriel), s'ils sont tous en string cliquez sur **CHECK NOW** → **INFER TYPES FROM DATA** → Save
 
 ### Questions
 
 a. Quelle est la variable cible ?  
-b. Combien le dataset contient-il d'observations et de variables ?
+b. Combien le dataset contient-il d'observations et de variables (Explore) ?
 
 <details>
   <summary><strong>💡</strong></summary>
