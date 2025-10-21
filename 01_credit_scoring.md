@@ -136,10 +136,22 @@ d. `age` faiblement positif avec bon crédit ; `amount` et `duration` associés 
 3. Coller le code suivant :
 
 ```python
+# -*- coding: utf-8 -*-
+import dataiku
 import pandas as pd, numpy as np
-df = input_dataset.copy()
-df["log_amount"] = np.log1p(df["amount"])
-output_dataset = df
+from dataiku import pandasutils as pdu
+
+# Read recipe inputs
+risk_prepared = dataiku.Dataset("risk_prepared")
+risk_prepared_df = risk_prepared.get_dataframe()
+
+risk_prepared_df["log_amount"] = np.log1p(risk_prepared_df["amount"])
+risk_prepared_code_df = risk_prepared_df # For this sample code, simply copy input to output
+
+
+# Write recipe outputs
+risk_prepared_code = dataiku.Dataset("risk_prepared_code")
+risk_prepared_code.write_with_schema(risk_prepared_code_df)
 ```
 
 4. Exécuter la recette : **Run →** vérifier l'apparition de la colonne `log_amount`
