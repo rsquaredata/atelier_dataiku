@@ -32,6 +32,7 @@ Il nécessite des métriques et approches adaptées.
 | Undersampling | Réduction des observations de la classe majoritaire | Rééquilibrer le dataset |
 | Oversampling | Réplication de la classe minoritaire | Augmenter les fraudes visibles |
 | SMOTE | Génération artificielle de cas minoritaires | Mieux répartir les frontières de décision |
+| Class weights | Pondération automatique des erreurs selon la fréquence des classes | Réduire l’impact de la classe majoritaire sans altérer le dataset |
 
 ### Métriques spécifiques
 
@@ -135,7 +136,7 @@ c. Elle capte un comportement temporel, utile pour distinguer des transactions a
 1. Sélectionner le dataset **fraud_hour** -> **+ Recipe -> Sampling -> Output : fraud_sampled -> Create**.  
 2. Paramétrer le sampling :  
    - **Sampling type : Stratified sampling** sur `is_fraud`.  
-   - **Sample size : 5000 lignes**.  
+   - **Sample size : 5 000 lignes**.  
 3. Exécuter la recette : **Run**.  
 4. Ouvrir le dataset **fraud_sampled -> Explore** pour vérifier la nouvelle proportion de fraudes (nettement plus élevée).  
 
@@ -148,7 +149,7 @@ b. Quelles autres techniques permettent de traiter le déséquilibre ?
   <summary><strong>💡</strong></summary>
 
 a. Un dataset trop déséquilibré pousse le modèle à prédire la classe majoritaire.  
-b. Alternatives : undersampling, oversampling, SMOTE, pondération des classes (`class_weight`).  
+b. Le sous-échantillonnage à 5 000 lignes a été choisi pour des raisons de performance, mais en pratique un dataset réduit peut biaiser la distribution des variables. Pour un projet réel, on privilégiera d'autres techniques : SMOTE, pondération des classes (`class_weight`) ...
 
 </details>
 
@@ -167,6 +168,8 @@ b. Alternatives : undersampling, oversampling, SMOTE, pondération des classes (
 7. Une fois terminé, consulter **Performance -> Metrics** : Precision, Recall, F1-score, AUC-PR, AUC-ROC.  
 8. Déployer le modèle : **Deploy -> Create Scoring recipe -> Output : fraud_prediction -> Create -> Run**.  
 
+> **Astuce – Réglages de XGBoost** :  L’interface Dataiku permet d'ajuster les **hyperparamètres XGBoost** sans code : `max_depth`, `learning_rate`, `n_estimators`, etc. L’onglet **Algorithm settings** offre aussi un grid search intégré. Ces options améliorent la performance du modèle tout en conservant une approche visuelle.
+
 ### Questions
 
 a. Quelle métrique privilégier pour évaluer ce modèle ?  
@@ -181,6 +184,8 @@ b. ≈ 0.85 selon les runs.
 c. Un Recall élevé indique peu de fraudes manquées, mais beaucoup de faux positifs.  
 
 </details>
+
+> **Choix des métriques** : En contexte fortement déséquilibré, l'**AUC-PR** (aire sous la courbe Precision-Recall) est souvent plus informative que l'**AUC-ROC**, car elle met l’accent sur la capacité du modèle à bien détecter la classe minoritaire sans être biaisée par la classe majoritaire. Ce point est régulièrement soulevé en entretien technique (ex.: [Kharwal, 2023](https://amanxai.com/2023/11/28/machine-learning-interview-questions-on-performance-metrics/) ; [DevInterview.io, 2024](https://github.com/Devinterview-io/model-evaluation-interview-questions)).
 
 ---
 
@@ -237,6 +242,12 @@ b. Quelle interprétation donner à un AUC-PR proche de 1 ?
 
 a. F1-score souvent faible, reflet du compromis entre rappel et précision.  
 b. excellent pouvoir de détection malgré le déséquilibre.  
+
+**Exemple de synthèse** :  
+Le modèle XGBoost atteint un **Recall** de 0,85 et un **AUC-PR** de 0,92, ce qui indique une très bonne capacité à détecter les fraudes malgré un fort déséquilibre de classes.  
+Le compromis entre Recall élevé (fraudes détectées) et Precision plus faible (faux positifs) reste cohérent avec les pratiques bancaires, où la priorité est de minimiser les fraudes non détectées.  
+Les variables les plus contributives sont `V14`, `V10` et `V12`, toutes fortement corrélées à la probabilité de fraude.  
+Ce modèle constitue un outil d'aide à la décision permettant d'orienter les vérifications manuelles sur les transactions à risque, dans une logique de surveillance automatisée et de maîtrise du risque opérationnel.
 
 ---
 
