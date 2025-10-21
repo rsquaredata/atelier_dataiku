@@ -58,8 +58,9 @@ $$
 | Threshold | Seuil de probabilité séparant les classes 0/1 |
 | AUC | Aire sous la courbe ROC, proche de 1 = meilleur modèle |
 
-</details>
 ---
+
+</details>
 
 ## TP - Scoring clients
 
