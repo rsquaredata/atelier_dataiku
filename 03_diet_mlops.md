@@ -196,7 +196,7 @@ a. Le modèle et le LLM sont deux points de défaillance : si l'un faiblit, la c
 b. Baisse du Recall, hausse du taux d'erreur, variation des distributions ou latence excessive de l'API.  
 c. Examiner les logs, réentraîner le modèle si nécessaire, ou ajuster les seuils et prompts.
 
-> **Exemple - Détection d’une dérive : une variation anormale du Recall accompagnée d’un déplacement de la distribution des variables (`amount`, `hour`) peut révéler une dérive des données. Dans Dataiku, ce suivi se met en place via le **Model Evaluation Store** couplé à un **Scenario** de contrôle automatique.
+> **Exemple - Détection d’une dérive** : une variation anormale du Recall accompagnée d’un déplacement de la distribution des variables (`amount`, `hour`) peut révéler une dérive des données. Dans Dataiku, ce suivi se met en place via le **Model Evaluation Store** couplé à un **Scenario** de contrôle automatique.
 
 ---
 
