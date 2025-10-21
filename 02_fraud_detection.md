@@ -123,8 +123,8 @@ c. Pourquoi cette transformation peut-elle aider le modèle ?
 <details>
   <summary><strong>💡</strong></summary>
 
-a. `hour` varie de 0 à environ 47 (48 heures).  
-b. Les heures nocturnes peuvent présenter un léger excès de fraudes.  
+a. `hour` varie de 0 à 47 inclus (48 heures).  
+b. Les heures nocturnes (2-5h).  
 c. Elle capte un comportement temporel, utile pour distinguer des transactions atypiques.  
 
 </details>
