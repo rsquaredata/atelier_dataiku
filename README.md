@@ -2,9 +2,9 @@
 
 ## Présentation générale
 
-Ce dépôt constitue le support officiel de l'**atelier Dataiku**, élaboré dans le cadre du **Master 2 Statistique et Informatique pour la Science des Données (SISE)** de l'**Université Lumière Lyon 2**.
+Ce dépôt constitue le support officiel de l'**atelier Dataiku**, élaboré dans le cadre du **Master 2 Statistique et Informatique pour la Science des donnéEs (SISE)** de l'**Université Lumière Lyon 2**.
 
-L'objectif de cet atelier est d'offrir une **mise en pratique des outils Dataiku** à travers des études de cas inspirées de problématiques financières réelles. Il articule des dimensions techniques (préparation, modélisation, automatisation) et méthodologiques (explicabilité, gouvernance, MLOps, IA générative).
+L'objectif de cet atelier est d'offrir une **mise en pratique concrète de la plateforme Dataiku** à travers des études de cas inspirés du secteur financier. Il articule des dimensions techniques (préparation, modélisation, automatisation) et méthodologiques (explicabilité, gouvernance, MLOps, IA générative).
 
 ---
 
@@ -81,4 +81,4 @@ Certaines fonctionnalités avancées de Dataiku (plugins externes, versioning co
 Elles sont néanmoins introduites conceptuellement dans le **Module 3 – Automatisation, Agents et LLM** en guise d'introduction aux pratiques du MLOps moderne et à l'intégration de l'**IA générative** dans les chaînes analytiques.
 
 --- 
-Usage strictement académique et non commercial.
+Usage strictement académique et non commercial” en bas est excellent. Cet atelier a été élaboré dans le cadre de l’UE Ateliers techniques du Master 2 SISE - Université Lumière Lyon 2 (promotion 2025-2026).
