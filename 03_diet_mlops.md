@@ -96,6 +96,11 @@ Dataiku propose un Model Evaluation Store pour centraliser et comparer les métr
 ### A. Création d'un scénario d'automatisation
 Objectif : créer un pipeline automatique de mise à jour et d'évaluation du modèle de détection de fraude.
 
+Au préalable se rendre dans **Administration -> Settings -> Notifications & Integrations -> Messaging channels** et remplir les données comme ci-dessous :
+![SMTP](/imgs/smtp.png)
+
+Mot de passe : mmcf nkmo gkdy udtq
+
 1. Dans le projet, ouvrir **Scenarios -> + New Scenario**.
    - Nom : `auto_fraud_pipeline`
    - Trigger : **Manually** (pour commencer)
@@ -103,12 +108,11 @@ Objectif : créer un pipeline automatique de mise à jour et d'évaluation du mo
    - Sélectionner les datasets : `fraud_hour`, `fraud_sampled`, `fraud_prediction`
 3. Ajouter une étape : **+ Step -> Train model(s)**
    - Sélectionner le modèle `fraud_xgboost_model`
-4. Ajouter une étape : **+ Step -> Run Scoring recipe(s)**
-   - Choisir la recette `fraud_prediction`
-5. **+ Step -> Send message**
+4. **+ Step -> Send message**
    - Destinataire : votre e-mail
    - Message  : "Pipeline terminé : modèle fraud réentraîné et scoré."
-6. Enregistrer le scénario puis exécuter : **Run Now**
+   - Ajouter vos pièces dans **Attachments** (par exemple : votre analyse du modèle)
+5. Enregistrer le scénario puis exécuter : **Run**
 
 ### Questions
 a. Quels avantages apporte l'automatisation à ce stade du projet ?  
@@ -133,25 +137,20 @@ Objectif : créer un agent capable de produire automatiquement une synthèse tex
    - Nom : `risk_explanation`
 2. Choisir **Mistral API** comme fournisseur LLM
    - Si l'API n'est pas configurée :
-     - **Settings -> Integrations -> LLMs -> + Add LLM Provider**
-     - Fournisseur : Mistral
-     - Clé API : coller la clé fournie (`sk-...`)
-3. Dans la LLM Recipe :
+     - **Administration -> Connections -> + New Connection -> Mistral AI**
+     - Clé API : coller la clé fournie (`votre_clé_api`)
+3. Dans la LLM Prompt :
    - Prompt :
      ```
      Vous êtes un analyste conformité.
      Résumez en quelques lignes pourquoi cette transaction est considérée comme potentiellement frauduleuse, en vous appuyant sur les variables les plus importantes du modèle.
      ```
    - Entrée : `fraud_prediction`
-   - Sortie : `risk_explanation`
    - Exécuter : **Run**
-4. Créer un **Agent** : **+ New -> Agent -> Blank Agent**
-   - Nom : `RiskAnalystBot`
-   - Action : Analyser les transactions à risque
-   - Comportement :
-     - Entrée : `fraud_prediction`
-     - Sortie : `cases_to_review.csv`
-   - Exécuter : **Run**
+4. Tester un **Agent** : **+ New -> Agent Tools**
+   - Nom : `AnalystBot`
+   - Action : Tester en lui donnant des instructions du type "Retourne les lignes où is_fraud = 1"
+   - Exécuter : **Run Test**
 
 ### Questions
 a. Quel rôle joue le LLM dans ce pipeline ?  
@@ -171,21 +170,19 @@ c. Risques : hallucinations, biais, fuites de données sensibles. D'où l'import
 
 ---
 
-### C. Supervision, alertes et tableau de bord
+### C. Supervision, alertes et tableau de bord (A tester)
 
-1. Créer un dashboard de supervision : **+ New -> Dashboard -> llm_performance**
+1. Créer un dashboard de supervision : **Dashboard -> llm_performance**
    - Ajouter :
      - Historique des versions de modèles (Model Evaluation Store)
      - Performance du modèle (Precision, Recall, AUC-PR)
      - Indicateur de dérive des données
      - Liste des dernières explications générées par le LLM
-2. Créer un scénario de contrôle : **+ New Scenario -> health_check_llm**
-   - Etape 1 : Vérifier les métriques du modèle (`fraud_xgboost_model`)
-   - Etape 2 : Tester la disponibilité de l'API Mistral (ping)
-   - Etape 3 : Envoi automatique d'un e-mail si l'une des vérifications échoue
+2. (Bonus Facile) Créer un scénario de contrôle : **Scénario -> + New Scenario -> health_check_llm**
+   Objectif : Exporter le dashboard créé dans le point précédent dans un e-mail
 
-### Questions
-a. Pourquoi surveiller à la fois le modèle et l'API LLM ?  
+### Questions (Pour poussez plus loin)
+a. Pourquoi pourrait-il être intéressant de surveiller à la fois le modèle et l'API LLM ?  
 b. Quels indicateurs peuvent signaler une dérive ?  
 c. Quelle serait la réaction appropriée en cas de dérive détectée ?
 
