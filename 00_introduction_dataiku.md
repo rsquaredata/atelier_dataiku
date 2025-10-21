@@ -2,8 +2,8 @@
 
 ## 1. Introduction et objectifs
 
-Ce module introductif a pour but de replacer l'atelier Dataiku dans le contexte plus large de la data science appliquée à la finance.  
-Il présente l'environnement de travail, les fondements de la plateforme Dataiku, et la démo de mise en route qui permettra d'aborder les modules techniques suivants (scoring et détection de fraude).
+Ce module introductif a pour but de replacer l’atelier Dataiku dans le contexte plus large de la data science appliquée à la finance.  
+Il présente l’environnement de travail, les fondements de la plateforme Dataiku, et une démonstration de mise en route servant de base aux modules techniques suivants (scoring et détection de fraude).
 
 **Objectifs pédagogiques**
 
@@ -13,6 +13,8 @@ Il présente l'environnement de travail, les fondements de la plateforme Dataiku
 - Réaliser pas à pas la démo de création de projet et d'import de données.  
 - Acquérir une vue d'ensemble du cycle de vie d'un projet de data science dans Dataiku.  
 
+Les notions abordées ici seront mobilisées dans les modules 1 et 2 (scoring et détection de fraude).  
+
 ---
 
 ## 2. Contexte et positionnement de Dataiku
@@ -20,19 +22,21 @@ Il présente l'environnement de travail, les fondements de la plateforme Dataiku
 ### 2.1. Origine et développement
 
 **Dataiku** est une société française fondée à Paris en 2013 par **Florian Douetteau**, **Thomas Cabrol**, **Clément Stenac** et **Marc Batty**.  
-Leur ambition initiale : rendre la data science collaborative et accessible, sans dépendre exclusivement du code.  
+Leur ambition initiale : rendre la data science collaborative, reproductibleet accessible, sans la limiter aux profils techniques..  
 
 Le produit phare, **Dataiku DSS (Data Science Studio)**, est devenu une plateforme de référence pour la création, le déploiement et la gouvernance de projets analytiques et de machine learning à l'échelle d'une organisation.
 
 ### 2.2. Philosophie : “Democratize Data Science”
 
-L'objectif de Dataiku n'est pas de remplacer les data scientists, mais de créer un **environnement partagé** où différents profils (data engineers, analystes, métiers) peuvent travailler ensemble :
+Dataiku se positionne comme un **environnement partagé** entre différents  profils :
 
 - Les utilisateurs non techniques exploitent des **recipes visuelles**.  
 - Les utilisateurs avancés peuvent intégrer du **code Python, R, SQL** au sein du même flux.  
-- L'outil favorise la **gouvernance** et la **traçabilité** de chaque étape.
+- L'outil favorise la **traçabilité**, la **reproductibilité** et la **collaboration** à toutes les étapes.
 
-Cette approche est qualifiée de **tech-agnostique** : Dataiku ne privilégie pas une technologie ou un langage particulier, mais agit comme une couche d'orchestration entre eux.
+Cette approche est dite **tech-agnostique** : Dataiku ne privilégie pas une technologie ou un langage particulier, mais agit comme une **couche d'orchestration** entre eux.
+
+> Cette volonté de "démocratisation" soulève parfois des débats : on pourrait estimer que la simplification visuelle peut masquer la complexité réelle des choix analytiques. L’intérêt pédagogique de Dataiku réside donc dans sa capacité à concilier lisibilité et compréhension du code sous-jacent.
 
 ---
 
@@ -70,7 +74,7 @@ Dataiku dispose de connecteurs vers :
 - Services d'analyse : Tableau, Power BI, Qlik.  
 - Environnements de développement : compatibilité directe avec **Python (venv ou conda)**, **R**, **Spark**, **SQL**.
 
-Les bibliothèques Python ou R nécessaires sont gérées par **code environnements** internes : chaque projet peut posséder un environnement virtuel isolé.
+Chaque projet peut disposer de son propre environnement virtuel isolé (**code environments**).
 
 ---
 
@@ -89,33 +93,20 @@ Les bibliothèques Python ou R nécessaires sont gérées par **code environneme
 6. **Gouvernance et monitoring**  
    (drift detection, audit, permissions).
 
----
-
-### Comparatif — Dataiku vs autres outils de l'écosystème data
-
-| Outil | Type principal | Approche | Niveau de transparence | Points forts | Limites |
-|--------|----------------|-----------|-------------------------|---------------|----------|
-| **Dataiku** | Plateforme de **data science** et **ML** | **Whitebox** (no-code & code-friendly) | Très élevé : traçabilité du Flow, explicabilité des modèles, logs, gouvernance | Collaboration, traçabilité, intégration Python/R, gouvernance | Nécessite un minimum de structure de projet |
-| **Power BI** | Outil de **Business Intelligence (BI)** | **Semi-whitebox** (formules DAX visibles mais moteur partiellement opaque) | Moyenne : scripts Power Query transparents, moteur interne fermé | Visualisations interactives, intégration Microsoft, facilité d'usage | Explicabilité faible, logique de calcul fermée |
-| **Qlik Sense / Qlik View** | **BI associatif** | **Semi-whitebox** (scripts ETL visibles, moteur propriétaire opaque) | ⚙️ Moyenne : logique de chargement lisible, algorithme associatif non documenté | Analyse associative rapide, exploration intuitive | Opaque sur le moteur interne et calculs mémoire |
-| **Apache Hop** | Outil **ETL open source** | **Whitebox (open source)** | Élevée : workflows et scripts entièrement visibles | Transparence, flexibilité, extensibilité | Pas d'interface analytique ni AutoML |
-| **Apache Doris** | **Base analytique distribuée (OLAP)** | **Whitebox (open source)** | Élevée côté code source, mais faible côté interface utilisateur | Performances massives, SQL analytique, open source | Réservé aux profils techniques, pas d'interface visuelle |
-| **Apache NiFi** | Outil d'**ingestion et d'orchestration de flux** | **Whitebox (open source)** | Élevée : dataflows visibles, provenance et traçabilité natives | Ingestion en temps réel, connecteurs multiples, intégration avec Dataiku via API | Pas de moteur analytique intégré, courbe d'apprentissage initiale |
+> La transparence et la gouvernance sont au cœur de l'esprti de l’outil, mais certaines recettes internes restent partiellement voire totalement opaques ; le contrôle complet du code n’est donc pas toujours possible dans la version Cloud.
 
 ---
 
-## 3. Démonstration — Import de taux de change (Banque centrale européenne)
+## 5. Démonstration — Taux de change BCE
 
 ### Jeu de données
 
-- **Source :** Banque centrale européenne (ECB)  
+- **Source :** Banque centrale européenne (BCE)  
 - **Accès public :** [https://nbs.sk/export/en/exchange-rate/latest/csv](https://nbs.sk/export/en/exchange-rate/latest/csv)  
 - **Format :** CSV (actualisé chaque jour ouvré vers 16:00 CET).  
 - **Colonnes :** `Date`, `Currency`, `Country`, `Amount`, `Rate`.
 
----
-
-### 3.2. Étapes de la démonstration
+### Étapes de la démonstration
 
 #### Étape 1 : création du projet
 
@@ -152,9 +143,7 @@ Les bibliothèques Python ou R nécessaires sont gérées par **code environneme
 
 **Question :**  
 - Quelle devise a actuellement le taux de conversion le plus élevé ?  
-  <details><summary>💡</summary>Les devises peu courantes comme l'ISK (couronne islandaise) ou le HUF (forint hongrois) affichent souvent les taux les plus élevés.</details>
-
----
+  <details><summary>💡</summary>Les devises peu courantes comme l'ISK (couronne islandaise) ou le HUF (forint hongrois) affichent kes taux les plus élevés.</details>
 
 #### Étape 5 : préparation des données
 
@@ -175,8 +164,6 @@ Les bibliothèques Python ou R nécessaires sont gérées par **code environneme
 - Pourquoi peut-il être utile de calculer le taux inverse ?  
   <details><summary>Réponse</summary>Parce qu'il permet d'exprimer le montant d'euros obtenu pour une unité de devise étrangère, ce qui facilite la comparaison dans les deux sens.</details>
 
----
-
 #### Étape 6 : visualisation et tableau de bord
 
 1. Dans le Flow, sélectionner `fx_rates_cleaned` → **+ New → Dashboard**.  
@@ -193,7 +180,7 @@ fx_rates → fx_rates_cleaned → fx_dashboard
 
 ---
 
-## 4. Vérification du Flow
+## Vérification du Flow
 
 Chaque nœud doit être connecté et nommé ainsi :
 | Type           | Nom                         | Description                                 |
@@ -205,21 +192,34 @@ Chaque nœud doit être connecté et nommé ainsi :
 
 ---
 
-## 5. Transparence et approche « whitebox »
+## 6. Transparence et approche « whitebox »
 
 L'un des intérêts majeurs de Dataiku réside dans son approche **whitebox** :  
-plutôt que de masquer la logique interne des traitements, la plateforme rend chaque opération **lisible, traçable et reproductible**.
+chaque transformation est traçable et documentée dans le Flow.
 
-- Les **recipes** sont documentées et visualisables dans le **Flow**, garantissant la transparence du pipeline.  
-- Les **modèles de machine learning** exposent leurs **coefficients, métriques et graphiques d'explicabilité**.  
-- Les **scenarios** et **logs d'exécution** permettent de suivre précisément les actions réalisées.  
+- Les **recipes** sont documentées et rejouables dans le **Flow**,  
+- Les modèles exposent leurs **coefficients, métriques et graphes d'explicabilité**.  
+- Les **scenarios** et **logs d'exécution** permettent de suivre les actions réalisées.  
 
-Cette philosophie s'oppose aux outils dits “blackbox” qui produisent un résultat sans permettre de comprendre le cheminement.  
-Elle est particulièrement cruciale en **finance**, où la **traçabilité, la justification et la gouvernance des modèles** sont des obligations réglementaires.
+Cette philosophie est particulièrement cruciale en **finance**, où la **traçabilité, la justification et la gouvernance des modèles** sont des obligations réglementaires (ex.: Bâle III, ESG).
+
+### Comparatif - Dataiku vs autres outils data
+
+Ce tableau situe Dataiku parmi d’autres outils de l’écosystème data.  
+Il n'a pas vocation à être exhaustif mais à éclairer la notion de transparence (whitebox vs blackbox).
+
+| Outil | Type principal | Approche | Niveau de transparence | Points forts | Limites |
+|--------|----------------|-----------|-------------------------|---------------|----------|
+| **Dataiku** | Plateforme de **data science** et **ML** | **Whitebox** (no-code & code-friendly) | Très élevé : traçabilité du Flow, explicabilité des modèles, logs, gouvernance | Collaboration, traçabilité, intégration Python/R, gouvernance | Nécessite un minimum de structure de projet |
+| **Power BI** | Outil de **Business Intelligence (BI)** | **Semi-whitebox** (formules DAX visibles mais moteur partiellement opaque) | Moyenne : scripts Power Query transparents, moteur interne fermé | Visualisations interactives, intégration Microsoft, facilité d'usage | Explicabilité faible, logique de calcul fermée |
+| **Qlik Sense / Qlik View** | **BI associatif** | **Semi-whitebox** (scripts ETL visibles, moteur propriétaire opaque) | ⚙️ Moyenne : logique de chargement lisible, algorithme associatif non documenté | Analyse associative rapide, exploration intuitive | Opaque sur le moteur interne et calculs mémoire |
+| **Apache Hop** | Outil **ETL open source** | **Whitebox (open source)** | Élevée : workflows et scripts entièrement visibles | Transparence, flexibilité, extensibilité | Pas d'interface analytique ni AutoML |
+| **Apache Doris** | **Base analytique distribuée (OLAP)** | **Whitebox (open source)** | Élevée côté code source, mais faible côté interface utilisateur | Performances massives, SQL analytique, open source | Réservé aux profils techniques, pas d'interface visuelle |
+| **Apache NiFi** | Outil d'**ingestion et d'orchestration de flux** | **Whitebox (open source)** | Élevée : dataflows visibles, provenance et traçabilité natives | Ingestion en temps réel, connecteurs multiples, intégration avec Dataiku via API | Pas de moteur analytique intégré, courbe d'apprentissage initiale |
 
 ---
 
-## 6. Perspectives métier
+## 7. Perspectives métier
 
 - Les taux de change publiés par la Banque centrale européenne constituent une **référence officielle** pour de nombreuses institutions financières.  
 - Cette démonstration illustre comment un analyste peut :  
@@ -228,14 +228,13 @@ Elle est particulièrement cruciale en **finance**, où la **traçabilité, la j
   - visualiser les résultats dans un tableau de bord interactif.  
 - Aucune ligne de code n'est nécessaire pour produire une analyse quotidienne reproductible.
 
-On note que l'usage de Dataiku en finance permet de concilier exigences de rigueur analytique et besoins opérationnels :
+Dans un contexte financier, Dataiku aide à concilier :  
+- **productivité** (automatisation des tâches répétitives)  
+- **traçabilité** (suivi des transformations)  
+- **interopérabilité** (intégration avec les systèmes bancaires)  
+- **gouvernance** (documentation et audit)
 
-- **Productivité** : automatisation de tâches répétitives (préparation, scoring, reporting).  
-- **Traçabilité** : chaque transformation est enregistrée, facilitant les audits réglementaires (Bâle III, ESG).  
-- **Interopérabilité** : intégration simple avec les systèmes d'information bancaires existants.  
-- **Collaboration** : les équipes data, IT et métier travaillent sur une plateforme commune.
-
-L'objectif n'est pas de remplacer les spécialistes techniques, mais de renforcer la gouvernance et la reproductibilité des projets.
+> L'outil se distingue moins par la performance de ses modèles que par la fiabilité et la conformité de son processus analytique.
 
 ---
 
