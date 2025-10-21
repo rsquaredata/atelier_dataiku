@@ -1,5 +1,6 @@
 # Module 2 - Détection de fraude : classification déséquilibrée et évaluation
-## 1. Introduction et objectifs
+
+## Introduction et objectifs
 
 Ce module prolonge le précédent en abordant la détection de fraude à partir de transactions bancaires.
 Le jeu de données utilisé est `creditcard.csv`, importé puis renommé `fraud` dans Dataiku Cloud.
@@ -14,6 +15,9 @@ Objectifs pédagogiques :
 - Créer un tableau de bord de suivi des prédictions
 
 ---
+
+<details>
+  <summary><strong>💡</strong></summary>
 
 ## 2. Rappels théoriques - classification déséquilibrée et métriques adaptées
 
@@ -58,9 +62,11 @@ $$
 
 ---
 
-## 3. TP - Détection de fraude
+</details>
 
-> Pré-requis : disposer du fichier `creditcard.csv` et rester dans le même projet Dataiku Cloud que pour le scoring.
+## TP - Détection de fraude
+
+> Prérequis : avoir téléchargé le fichier `creditcard.csv`.
 
 ### A. Import du dataset et identification de la variable cible
 
@@ -85,9 +91,9 @@ c. Quelle est la proportion de transactions frauduleuses ?
 <details>
   <summary><strong>💡</strong></summary>
 
-a. La variable cible est `Class`, renommée en `is_fraud`.  
-b. Environ 285 000 observations et 31 variables.  
-c. Environ 0.17 % de fraudes, soit un fort déséquilibre.  
+a. La variable cible est `Class`. On l'a renommée en `is_fraud`, pourquoi d'ailleurs ?   
+b. 285000, 31.  
+c. 0.17 % de fraudes, soit un fort déséquilibre.  
 
 </details>
 
@@ -142,7 +148,7 @@ b. Quelles autres techniques permettent de traiter le déséquilibre ?
   <summary><strong>💡</strong></summary>
 
 a. Un dataset trop déséquilibré pousse le modèle à prédire la classe majoritaire.  
-b. Alternatives : oversampling, SMOTE, pondération des classes (`class_weight`).  
+b. Alternatives : undersampling, oversampling, SMOTE, pondération des classes (`class_weight`).  
 
 </details>
 
@@ -171,7 +177,7 @@ c. Comment interpréter un Recall élevé avec une Precision faible ?
   <summary><strong>💡</strong></summary>
 
 a. Le Recall et l'AUC-PR sont les plus pertinents pour les jeux très déséquilibrés.  
-b. Typiquement autour de 0.85 selon les runs.  
+b. ≈ 0.85 selon les runs.  
 c. Un Recall élevé indique peu de fraudes manquées, mais beaucoup de faux positifs.  
 
 </details>
@@ -232,8 +238,6 @@ b. Quelle interprétation donner à un AUC-PR proche de 1 ?
 a. F1-score souvent faible, reflet du compromis entre rappel et précision.  
 b. excellent pouvoir de détection malgré le déséquilibre.  
 
-</details>
-
 ---
 
 ### Vérification du Flow
@@ -248,7 +252,7 @@ Un modèle **fraud_xgboost_model** doit apparaître dans le **Lab**.
 
 ---
 
-## 4. Perspective métier
+## Perspective métier
 
 La détection de fraude en banque repose sur un compromis entre Recall et Precision.
 - Un Recall élevé garantit qu'on ne laisse passer presque aucune fraude.
@@ -257,3 +261,5 @@ La détection de fraude en banque repose sur un compromis entre Recall et Precis
 Les institutions fixent le seuil selon leur tolérance au risque et leurs capacités opérationnelles.
 
 ---
+
+</details>
