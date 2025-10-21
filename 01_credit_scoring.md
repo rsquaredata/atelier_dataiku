@@ -212,6 +212,8 @@ Ce modèle de scoring prédit le risque de défaut avec une AUC de 0,82 (avis ?)
 
 </details>
 
+---
+
 ### Vérification du Flow
 
 Le Flow doit présenter les noeuds suivants :
