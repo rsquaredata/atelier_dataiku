@@ -104,61 +104,72 @@ Chaque projet peut disposer de son propre environnement virtuel isolé (**code e
 - **Source :** Banque centrale européenne (BCE)  
 - **Accès public :** [https://nbs.sk/export/en/exchange-rate/latest/csv](https://nbs.sk/export/en/exchange-rate/latest/csv)  
 - **Format :** CSV (actualisé chaque jour ouvré vers 16:00 CET).  
-- **Colonnes :** `Date`, `Currency`, `Country`, `Amount`, `Rate`.
+- **Colonnes :** `Date`, `Currencies Rate`.
 
 ### Étapes de la démonstration
 
 #### Étape 1 : création du projet
 
 1. Se connecter sur <https://profile.dataiku.com/> puis **Start free trial → Dataiku Cloud**.  
-2. Créer un projet nommé :  
+2. Créer un projet nommé : 
+   - Cliquer sur **New Project → Blank Project**.
    - **Name :** `Dataiku_Intro_[PrénomNom]`  
    - **Key :** `Intro_[initiales]`  
-   - Cliquer sur **Create Project**.
+   - Cliquer sur **Create**.
 
-#### Étape 2 : création d'un dossier HTTP
+#### Étape 2 : création d'un dossier de téléchargement automatique
 
-1. Dans la vue **Flow**, cliquer sur **+ New → Folder → HTTP**.  
-2. Dans le champ **URL**, coller :  
+1. Dans la vue **Flow**, cliquer sur **(Connect or create)/(+Add Item → Connect or create). Dans la catégorie Dataiku Managed → Folder**.  
+2. Nommer le dossier : `ecb_rates_folder`.
+3. Retourner dans le Flow. Vous observez maintenant un premier élement.
+4. A partir du dossier sélectionné, appuyer sur (+) dans la barre latérale droite.
+Un menu s'affiche vous proposant plusieurs options, tout d'abord pour gérer l'élément sélectionné, puis en dessous des recipes.
+5. Nous souhaitons maintenant ajouter un fichier de données à ce fichier. Pour cela cliquer sur **Download** sous **Visual recipes**. Le download recipe va vous proposer de sélectionner un dossier. En l'occurence nous n'en avons qu'un, il le sélectionne donc automatiquement. Cliquer ensuite sur **Create recipe**.
+6. On peut observer plusieurs options disponibles, mais celle qui nous intéresse est **+Add a first source**.
+Dans le champ **URL**, coller :  
    ```
    https://nbs.sk/export/en/exchange-rate/latest/csv
    ```  
-3. Cliquer sur **Test & List Files** → vérifier qu'un fichier apparaît.  
-4. Valider → **Create**.  
-5. Renommer le dossier : `ecb_rates_folder`.
+7. Ne rien changer et cliquer sur **Check** → vérifier qu'un fichier apparaît.  
+8. En haut à droite, cliquer sur **Save** → **Run** en bas à gauche. 
+Un "job" va être instancié pour effectuer le téléchargement de votre fichier. Attendre que celui-ci se termine, puis cliquer sur **View folder ecb_rates_folder**.
 
 #### Étape 3 : création du dataset
 
-1. Dans le **Flow**, cliquer sur **+ Dataset → Files in Folder**.  
+1. Dans le **Flow**, cliquer sur **(+) Create Dataset**.  
 2. Sélectionner le dossier `ecb_rates_folder`.  
-3. Laisser le fichier détecté par défaut.  
-4. Nommer le dataset : **`fx_rates`**.  
-5. Cliquer sur **Create** puis ouvrir le dataset.  
+3. Appuyer d'abord sur **Test & Get Schema**, puis **List Files**.
+4. Laisser le fichier détecté par défaut.  
+5. Nommer le dataset : **`fx_rates`**.  
+6. Cliquer sur **Create** puis ouvrir le dataset.  
 
 #### Étape 4 : exploration
 
-1. Onglet **Explore** : visualiser les colonnes (`Currency`, `Rate`, `Date`, etc.).  
-2. Trier par `Rate` pour identifier les devises les plus fortes/faibles.  
-3. Cliquer sur **Statistics → Descriptive Statistics** : observer la distribution des taux.
-
-**Question :**  
-- Quelle devise a actuellement le taux de conversion le plus élevé ?  
-  <details><summary>💡</summary>Les devises peu courantes comme l'ISK (couronne islandaise) ou le HUF (forint hongrois) affichent kes taux les plus élevés.</details>
+1. Onglet **Explore** : visualiser les colonnes (`Date`,`USD (Taux de change)`, etc.).  
+2. Vous pouvez voir que si l'on veut trier par `Rate` pour identifier les devises les plus fortes/faibles avec nos colonnes actuelles, cela reste compliqué.
+Nous allons donc préparer nos données.
 
 #### Étape 5 : préparation des données
 
 1. Depuis le **Flow**, sélectionner `fx_rates` → **+ Recipe → Prepare**.  
-2. Nommer la sortie : **`fx_rates_cleaned`**.  
-3. Dans l'éditeur Prepare :  
-   - **Supprimer** les lignes vides s'il y en a.  
-   - **Renommer** les colonnes si nécessaire (par ex. `Rate` → `EUR_per_unit`).  
+2. Nommer la sortie : **`fx_rates_prepared`**.  
+3. Dans l'éditeur Prepare (**+ Add a new step**):  
+   - **Supprimer** les lignes vides s'il y en a. (**Remove/Keep rows where cell is empty**)
+   - **Convertir les nombre en format 'Raw'** (**Convert number formats** pour IDR & KRW)
+   - **Regrouper** les devises et leur valeur sous une colonne **Currency** et une colonne **Rate** (**Fold multiple columns** en cochant **Remove folded columns**)
    - **Créer** une nouvelle colonne :  
      ```
-     Inverse_rate = 1 / EUR_per_unit
+     Inverse_rate = 1 / Rate
      ```  
-     (taux inverse, utile pour exprimer la valeur d'un EUR en devise locale).  
+     (taux inverse, utile pour exprimer la valeur d'un EUR en devise locale). 
+     (**Formula**) 
 4. Exécuter la Recipe.  
-5. Ouvrir `fx_rates_cleaned` et vérifier les nouvelles colonnes.
+5. Ouvrir `fx_rates_prepared` et vérifier les nouvelles colonnes.
+6. Explorer les différents graphiques et leurs options sur **Charts**.
+
+**Question :**  
+- Quelle devise a actuellement le taux de conversion le plus élevé ?  
+  <details><summary>💡</summary>La devise IDR (Roupie indonésienne)</details>
 
 **Question :**  
 - Pourquoi peut-il être utile de calculer le taux inverse ?  
@@ -166,17 +177,16 @@ Chaque projet peut disposer de son propre environnement virtuel isolé (**code e
 
 #### Étape 6 : visualisation et tableau de bord
 
-1. Dans le Flow, sélectionner `fx_rates_cleaned` → **+ New → Dashboard**.  
+1. Passer à l'onglet **Dashboard**.  
 2. Nommer le tableau de bord : **`fx_dashboard`**.  
 3. Ajouter deux graphiques :  
    - **Bar chart :** `Currency` en x, `EUR_per_unit` en y.  
-   - **Table :** liste complète des devises et des taux.  
+   - **Table :** liste complète des devises et des taux.
+   - Jouer avec les différentes options du dashboard afin de présenter de la meilleure des manières vos données.  
 4. Sauvegarder.
 
 **Flow attendu :**  
-```
-fx_rates → fx_rates_cleaned → fx_dashboard
-```
+![Download → folder → fx_rates → prepare → fx_rates_prepared](imgs/flow1.png)
 
 ---
 
@@ -185,11 +195,10 @@ fx_rates → fx_rates_cleaned → fx_dashboard
 Chaque nœud doit être connecté et nommé ainsi :
 | Type           | Nom                         | Description                                 |
 | -------------- | --------------------------- | ------------------------------------------- |
-| Dossier HTTP   | `ecb_rates_folder`          | Contient le fichier CSV distant.            |
+| Download |  | Permet le téléchargement du fichier CSV depuis un lien externe.
+| Dossier   | `ecb_rates_folder`          | Contient le fichier CSV distant.            |
 | Dataset        | `fx_rates`                  | Données brutes importées depuis le dossier. |
-| Recipe Prepare | (output) `fx_rates_cleaned` | Données nettoyées et enrichies.             |
-| Dashboard      | `fx_dashboard`              | Visualisation synthétique.                  |
-
+| Recipe Prepare | (output) `fx_rates_prepared` | Données nettoyées et enrichies.             |
 
 <details>
   <summary><strong></strong></summary>
