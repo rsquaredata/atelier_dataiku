@@ -65,13 +65,14 @@ $$r_{XY}=\frac{\mathrm{Cov}(X,Y)}{s_X s_Y},\quad |r|>0{,}8 \Rightarrow \text{var
 
 ### A. Création du projet et import du dataset
 
-1. Ouvrir <https://profile.dataiku.com/> → Start free trial → Dataiku Cloud
-2. Créer un nouveau projet : **+ New Project → Blank project**
+1. Ouvrir <https://profile.dataiku.com/> → Start free trial → Dataiku Cloud (si vous n'êtes pas redirigé sur Dataiku cloud, cliquez sur ce lien <https://launchpad-dku.app.dataiku.io/> , choisissez AWS Paris et nommez votre workspace
+2. Un node s'affiche s'il est en **Running** cliquez sur Open Instance, sinon cliquez sur **...**  plus haut et puis **Turn On** 
+3. Créer un nouveau projet : **+ New Project → Blank project**
    - Project name : `Dataiku_Bank_[PrenomNom]`
    - Key : `DB_[initiales]`
-3. Importer le fichier : **Flow (vous y êtes déjà normalement) → + Add Item (en haut à droite) → Upload → Select Files** → sélectionner `credit_scoring.csv` → Create
-4. Renommer le dataset : **Actions (à droite) → Rename → risk**
-5. Vérifier le schéma : **Onglet "Settings"(dans le dataset) → Schema →** vérifier les types (numérique vs catégoriel), s'ils sont tous en string cliquez sur **CHECK NOW** → **INFER TYPES FROM DATA** → Save
+4. Importer le fichier : **Flow (vous y êtes déjà normalement) → + Add Item (en haut à droite) → Upload → Select Files** → sélectionner `credit_scoring.csv` → Create
+5. Renommer le dataset : **Actions (à droite) → Rename → risk**
+6. Vérifier le schéma : **Onglet "Settings"(dans le dataset) → Schema →** vérifier les types (numérique vs catégoriel), s'ils sont tous en string cliquez sur **CHECK NOW** → **INFER TYPES FROM DATA** → Save
 
 ### Questions
 
