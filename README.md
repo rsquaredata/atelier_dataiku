@@ -37,7 +37,7 @@ L'atelier est structuré en quatre modules progressifs.
 | [**Module 0 – Introduction à Dataiku Cloud**](https://github.com/rsquaredata/atelier_dataiku/blob/main/00_introduction_dataiku.md) | Démonstration guidée (taux de change BCE), création de projet et exploration de l'interface. |
 | [**Module 1 – Scoring clients**](https://github.com/rsquaredata/atelier_dataiku/blob/main/01_credit_scoring.md) | Modélisation supervisée (classification binaire), exploration, préparation et interprétation. |
 | [**Module 2 – Détection de fraude**](https://github.com/rsquaredata/atelier_dataiku/blob/main/02_fraud_detection.md) | Traitement d'un jeu de données déséquilibré, XGBoost, métriques avancées et tableau de bord. |
-| [**Module 3 – Automatisation, Agents et LLM**](https://github.com/rsquaredata/atelier_dataiku/blob/main/03_diet_mlops.md) | Introduction au MLOps, automatisation de pipelines, agents de surveillance et explicabilité par LLM. |
+| [**Module 3 – Automatisation, Agents et LLM**](https://github.com/rsquaredata/atelier_dataiku/blob/main/03_automatisation.md) | Introduction au MLOps, automatisation de pipelines, agents de surveillance et explicabilité par LLM. |
 
 ---
 
