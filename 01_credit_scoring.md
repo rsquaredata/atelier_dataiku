@@ -17,7 +17,8 @@ Objectifs pédagogiques :
 
 <details>
   <summary><strong></strong></summary>
-## Rappels théoriques - statistiques descriptives et classification supervisée
+
+  ## Rappels théoriques - statistiques descriptives et classification supervisée
 
 ### Variables
 - Variable cible : binaire $y \in \{0,1\}$ (1 = bon payeur, 0 = mauvais payeur)
@@ -25,9 +26,7 @@ Objectifs pédagogiques :
 
 ### Régression logistique
 
-$$
-P(y_i=1 \mid X_i)=\frac{1}{1+e^{-(\beta_0+\beta_1x_{i1}+\ldots+\beta_p x_{ip})}}
-$$
+$$P(y_i=1 \mid X_i)=\frac{1}{1+e^{-(\beta_0+\beta_1x_{i1}+\ldots+\beta_p x_{ip})}}$$
 
 Chaque coefficient $\beta_j$ reflète l'influence de la variable $x_j$ sur la probabilité d'appartenir à la classe 1.
 Régularisation L1 (Lasso) : $\lambda\sum|\beta_j|$ ; L2 (Ridge) : $\lambda\sum\beta_j^2$
@@ -44,9 +43,7 @@ Régularisation L1 (Lasso) : $\lambda\sum|\beta_j|$ ; L2 (Ridge) : $\lambda\sum\
 
 ### Corrélation et colinéarité
 
-$$
-r_{XY}=\frac{\mathrm{Cov}(X,Y)}{s_X s_Y},\quad |r|>0{,}8 \Rightarrow \text{variables redondantes.}
-$$
+$$r_{XY}=\frac{\mathrm{Cov}(X,Y)}{s_X s_Y},\quad |r|>0{,}8 \Rightarrow \text{variables redondantes.}$$
 
 ### Glossaire intégré
 
@@ -64,7 +61,7 @@ $$
 
 ## TP - Scoring clients
 
-> Pré-requis : disposer localement de `credit_scoring.csv`.
+> Prérequis : avoir activé son compte Dataiku Cloud et téléchargé le fichier `credit_scoring.csv` sur sa machine.
 
 ### A. Création du projet et import du dataset
 
@@ -183,7 +180,7 @@ b. Quel algorithme offre le meilleur compromis Precision/Recall ?
   <summary><strong>💡</strong></summary>
 
 a. Recall si le but est de minimiser les faux négatifs (ne pas accorder de prêt risqué)  
-b. - **Éthique** : attention aux variables sensibles (`sex`, `age`)  
+b. **Éthique** : attention aux variables sensibles (`sex`, `age`)  
 b. XGBoost ou Random Forest selon les runs  
 
 </details>
@@ -230,17 +227,17 @@ Si un dataset intermédiaire est créé (par exemple `risk_prepared_code`), il d
    
 ## Perspective métier
 
-Le scoring de crédit estime la probabilité de défaut d'un client.
+Le scoring de clients estime la probabilité de défaut de paiement d'un client dans le cadre d'octroi d'un crédit.
 En contexte bancaire :
 
 - Utilité : pré-tri des dossiers pour étude plus poussée des cas risqués
 - Métrique : Recall prioritaire car les faux négatifs sont coûteux
-- Éthique : variables sensibles (sexe, âge) à encadrer/contrôler/justifier voire exclure en cas de mise en prod réelle
+- Éthique : variables sensibles (sexe, âge) à encadrer/contrôler/justifier, voire exclure, en cas de mise en prod réelle
 - Variables clés : `duration`, `amount`, `payment_intensity`
 
 ---
 
-## 5. Ressources
+## Ressources
 
 - Dataiku Academy - *Classification Models* : <https://academy.dataiku.com/latest/course-detail/dataiku-ml-practitioner.html>
 - Documentation - *Machine Learning in Dataiku* : <https://doc.dataiku.com/dss/latest/machine-learning/index.html>
