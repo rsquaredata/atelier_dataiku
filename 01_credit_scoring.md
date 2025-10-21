@@ -210,6 +210,8 @@ b. Augmenter le seuil = augmente les FP (perte potentielle de clients) / baisser
 **Exemple de synthèse pour le dashboard** : 
 Ce modèle de scoring prédit le risque de défaut avec une AUC de 0,82 (avis ?). Les variables importantes sont la durée et le montant du prêt, toutes deux corrélées négativement à la probabilité de remboursement. Ce modèle constitue un outil d'aide à la décision pour les conseillers.
 
+</details>
+
 ### Vérification du Flow
 
 Le Flow doit présenter les noeuds suivants :
@@ -219,6 +221,11 @@ risk → risk_prepared → (code) → risk_predictions → risk_dashboard
 ```
 
 Si un dataset intermédiaire est créé (par exemple `risk_prepared_code`), il doit être l'entrée de la recette de scoring.
+
+> **Astuce** : tout projet Dataiku peut être exporté sous forme de *bundle* (**Administration → Bundles → Export**) pour être réutilisé sur un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer.
+
+<details>
+  <summary><strong></strong></summary>
 
 ---
    
@@ -242,6 +249,6 @@ En contexte bancaire :
 
 </details>
 
-> **Astuce** : tout projet Dataiku peut être exporté sous forme de *bundle* (**Administration → Bundles → Export**) pour être réutilisé sur un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer.
-
 ---
+
+<small>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</small>
