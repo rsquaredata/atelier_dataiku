@@ -114,7 +114,7 @@ Chaque projet peut disposer de son propre environnement virtuel isolé (**code e
 2. Créer un projet nommé :  
    - **Name :** `Dataiku_Intro_[PrénomNom]`  
    - **Key :** `Intro_[initiales]`  
-   - Cliquer sur **Create Project**.
+   - Cliquer sur **Create**.
 
 #### Étape 2 : création d'un dossier HTTP
 
