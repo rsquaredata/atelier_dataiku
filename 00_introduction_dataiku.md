@@ -190,7 +190,9 @@ Chaque nœud doit être connecté et nommé ainsi :
 | Recipe Prepare | (output) `fx_rates_cleaned` | Données nettoyées et enrichies.             |
 | Dashboard      | `fx_dashboard`              | Visualisation synthétique.                  |
 
----
+
+<details>
+  <summary><strong></strong></summary>
 
 ## 6. Transparence et approche « whitebox »
 
@@ -242,4 +244,9 @@ Dans un contexte financier, Dataiku aide à concilier :
 
 - Présentation Dataiku : <https://www.dataiku.com/product/>  
 - Documentation Dataiku : <https://doc.dataiku.com/>  
-- Dataiku Academy (cours en ligne gratuits) : <https://academy.dataiku.com/>  
+- Dataiku Academy (cours en ligne gratuits) : <https://academy.dataiku.com/>
+
+</details>
+---
+
+<small>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</small>
