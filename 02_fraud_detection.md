@@ -19,7 +19,7 @@ Objectifs pédagogiques :
 <details>
   <summary><strong></strong></summary>
 
-## 2. Rappels théoriques - classification déséquilibrée et métriques adaptées
+## Rappels théoriques - classification déséquilibrée et métriques adaptées
 
 ### Problématique du déséquilibre de classes
 
@@ -185,7 +185,7 @@ c. Un Recall élevé indique peu de fraudes manquées, mais beaucoup de faux pos
 
 </details>
 
-> **Choix des métriques** : En contexte fortement déséquilibré, l'**AUC-PR** (aire sous la courbe Precision-Recall) est souvent plus informative que l'**AUC-ROC**, car elle met l’accent sur la capacité du modèle à bien détecter la classe minoritaire sans être biaisée par la classe majoritaire. Ce point est régulièrement soulevé en entretien technique (ex.: [Kharwal, 2023](https://amanxai.com/2023/11/28/machine-learning-interview-questions-on-performance-metrics/) ; [DevInterview.io, 2024](https://github.com/Devinterview-io/model-evaluation-interview-questions)).
+> **Choix des métriques** : En contexte fortement déséquilibré, l'**AUC-PR** (aire sous la courbe Precision-Recall) est souvent plus informative que l'**AUC-ROC**, car elle met l’accent sur la capacité du modèle à bien détecter la classe minoritaire sans être biaisée par la classe majoritaire. Ce point est régulièrement soulevé en entretien technique (ex.: [Kharwal, 2023](https://amanxai.com/2023/11/28/machine-learning-interview-questions-on-performance-metrics/) ; [DevInterview.io, 2024](https://github.com/Devinterview-io/model-evaluation-interview-questions), [HireInSouth.com, 2025](https://www.hireinsouth.com/post/machine-learning-interview-questions)).
 
 ---
 
