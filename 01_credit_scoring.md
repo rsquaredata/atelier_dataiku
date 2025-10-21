@@ -207,8 +207,8 @@ b. XGBoost ou Random Forest selon les runs
 ### E. Interprétation et restitution
 
 1. Cliquez sur le nom d'un modèle: Parcourez **Interpretation → Feature importance, Partial dependence**, puis **Performance → Confusion Matrix**
-2. Créer un dashboard : **+ New → Dashboard → risk_dashboard**
-3. Ajouter : Feature importance, Confusion matrix, et un bloc **Text** avec une synthèse des résultats
+2. Créer un dashboard : Dans la barre du haut, à gauche des ... > Dashboards**+ New Dashboard → risk_dashboard**
+3. Ajouter : **New Tile** Feature importance, Confusion matrix(saved model report> Add Model> Saved model report options), et un bloc **Text** avec une synthèse des résultats (Pour Feature Importance, vous pouvez aussi exporter des rapports sous forme de datasets depuis les pages des modèles)
 4. Publier le dashboard
 
 ### Questions
@@ -233,9 +233,8 @@ Ce modèle de scoring prédit le risque de défaut avec une AUC de 0,82 (avis ?)
 
 Le Flow doit présenter les noeuds suivants :
 
-```
-risk → risk_prepared → (code) → risk_predictions → risk_dashboard
-```
+<img width="1103" height="234" alt="image" src="https://github.com/user-attachments/assets/ae8364aa-80f5-4869-8062-2bb4c1c76779" />
+
 
 Si un dataset intermédiaire est créé (par exemple `risk_prepared_code`), il doit être l'entrée de la recette de scoring.
 
