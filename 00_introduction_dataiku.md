@@ -70,7 +70,7 @@ Des modules complémentaires assurent l'intégration :
 
 Dataiku dispose de connecteurs vers :  
 - Bases de données : PostgreSQL, MySQL, Oracle, Snowflake, BigQuery.  
-- Cloud storages : AWS S3, Azure Blob, Google Drive.  
+- Cloud storages : AWS S3, Azure Storage, Google Drive.  
 - Services d'analyse : Tableau, Power BI, Qlik.  
 - Environnements de développement : compatibilité directe avec **Python (venv ou conda)**, **R**, **Spark**, **SQL**.
 
