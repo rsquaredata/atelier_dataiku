@@ -91,14 +91,15 @@ b. Dimensions : 1 000 observations et 21 variables
 ### B. Exploration initiale
 
 1. Ouvrir `risk` → **Explore**
-2. **Charts** : histogrammes pour `amount`, `duration`, `age`
-3. **Statistics → Missing values** : repérer les éventuelles valeurs manquantes
-4. **Statistics → Correlation matrix** : repérer les variables corrélées
-5. **Charts → Scatter** (`amount` vs `duration`) ; **Facet** par `credit_risk`
+2. **Charts** : histogrammes pour `amount`, `duration`, `age` (utilisez Count of records pour Y). Vous pouvez créer plusieurs graphiques ou en regrouper. 
+3. **Statistics → New Card → Automatically suggest analyses → Cocher les 4 features dans la partie droite** : Vous avez maintenant plusieurs analyses générées
+4. **Missing values** : Utilisez les analyses statistiques générées pour repérer s'il y a d'éventuelles valeurs manquantes 
+5. **Correlation matrix** : Utilisez la matrice de corrélation générée pour repérer les variables corrélées
+6. **Charts → +Chart(en bas) → Scatter** (`amount` vs `duration`) ; **Facet** par `credit_risk`
 
-### Questions
+### Questions 
 
-a. Quelle variable présente la plus forte asymétrie ?  
+a. A partir des analyses précédentes, quelle variable présente la plus forte asymétrie ?  
 b. Quelle variable semble la plus corrélée au risque ?  
 c. Y a-t-il des valeurs manquantes ?  
 d. Quelles relations observe-t-on entre `amount`, `age` et `duration` ?
@@ -121,12 +122,12 @@ d. `age` faiblement positif avec bon crédit ; `amount` et `duration` associés 
 
 1. Depuis le **Flow**, sélectionner `risk` → **+ Recipe → Prepare → Output : risk_prepared → Create**
 2. Nettoyer les noms de colonnes : **Columns → Rename columns** (`personal_status_sex`, `credit_history`, etc.)
-3. Créer la variable `payment_intensity` : **+ Add step → Formula → New column : payment_intensity → Expression : amount / nullif(duration,0)**
-4. Recoder `personal_status_sex` : **+ Add step → If... Then... Else → New column : Gender_bin**
+3. Créer la variable `payment_intensity` : **+ Add a new step → Formula → Formula for : payment_intensity → Expression : amount /duration**
+4. Recoder `personal_status_sex` : **+ Add a new step → Create If... Then... Else Statement** (aussi possible en utilisant Formula)
    - Si `personal_status_sex` ∈ {female div/dep/mar, female single} alors 1, sinon 0
    - Forcer le type en **Integer**
-5. Encodage de `job` : **+ Add step → Encoding → One-Hot encoding → Columns : job → Drop original : Yes**
-6. Exécuter la recette : **Run →** vérifier la création de `risk_prepared`
+5. Encodage de `job` : **+ Add step → Unfold → Column : job** (la variable job peut ensuite être supprimé)
+6. Exécuter la recette : **Run puis Allez dans Flow** et vérifiez la création de `risk_prepared`
 
 #### Code recipe
 
