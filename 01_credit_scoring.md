@@ -184,7 +184,7 @@ d. Moyenne : ≈ 7.15 ; écart-type : ≈ 0.88
 5. **Result → Train → Start**
 6. **Performance** : observer Accuracy, Recall, Precision, F1, AUC
 7. **Deploy → Create Scoring recipe → Output : risk_predictions → Create → Run**
-8. Une fois le lancement terminé, vous pouvez revenir dans **Design** changer les paramètres, les modèles,etc.. afin d'essayer d'obtenir de meilleurs mesures
+8. Une fois le lancement terminé, vous pouvez revenir dans **Design** changer les paramètres, les modèles,etc.. afin d'essayer d'obtenir de meilleurs mesures, vous pouvez ensuite naviguer entre sessions, models et tables pour comparer les différents modèles essayés
 
 ### Questions
 
