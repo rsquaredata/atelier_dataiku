@@ -177,13 +177,14 @@ d. Moyenne : ≈ 7.15 ; écart-type : ≈ 0.88
 
 ### D. Construction du modèle
 
-1. Sélectionner `risk_prepared` (ou `risk_prepared_code`) → **Lab → + New → Visual analysis → Predict**
-2. Target : `credit_risk` ; Prediction type : Binary classification
+1. Sélectionner `risk_prepared` (ou `risk_prepared_code`) → **Lab → AutoML Prediction → Create Predict model on credit_risk → Choose Algorithms → Create**
+2. Target : `credit_risk` ; Prediction type : Two-class classification
 3. Features : garder toutes les colonnes utiles, exclure identifiants
 4. **Design → Algorithms** : cocher Logistic Regression, Random Forest, XGBoost
-5. **Train → Start**
+5. **Result → Train → Start**
 6. **Performance** : observer Accuracy, Recall, Precision, F1, AUC
 7. **Deploy → Create Scoring recipe → Output : risk_predictions → Create → Run**
+8. Une fois le lancement terminé, vous pouvez revenir dans **Design** changer les paramètres, les modèles,etc.. afin d'essayer d'obtenir de meilleurs mesures
 
 ### Questions
 
