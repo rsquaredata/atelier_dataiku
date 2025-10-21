@@ -81,4 +81,4 @@ Certaines fonctionnalités avancées de Dataiku (plugins externes, versioning co
 Elles sont néanmoins introduites conceptuellement dans le **Module 3 – Automatisation, Agents et LLM** en guise d'introduction aux pratiques du MLOps moderne et à l'intégration de l'**IA générative** dans les chaînes analytiques.
 
 --- 
-Usage strictement académique et non commercial” en bas est excellent. Cet atelier a été élaboré dans le cadre de l’UE Ateliers techniques du Master 2 SISE - Université Lumière Lyon 2 (promotion 2025-2026).
+Usage strictement académique et non commercial. Cet atelier a été élaboré dans le cadre de l’UE Ateliers techniques du Master 2 SISE - Université Lumière Lyon 2 (promotion 2025-2026).
