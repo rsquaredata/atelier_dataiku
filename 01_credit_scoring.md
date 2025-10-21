@@ -121,7 +121,7 @@ d. `age` faiblement positif avec bon crédit ; `amount` et `duration` associés 
 ### C. Préparation des données et Code recipe
 
 1. Depuis le **Flow**, sélectionner `risk` → **+ Recipe → Prepare → Output : risk_prepared → Create**
-2. Nettoyer les noms de colonnes : **Columns → Rename columns** (`personal_status_sex`, `credit_history`, etc.)
+2. Renommer les noms de colonnes : **Columns → Rename columns** (`personal_status_sex`, `credit_history`, etc.)
 3. Créer la variable `payment_intensity` : **+ Add a new step → Formula → Formula for : payment_intensity → Expression : amount /duration**
 4. Recoder `personal_status_sex` : **+ Add a new step → Create If... Then... Else Statement** (aussi possible en utilisant Formula)
    - Si `personal_status_sex` ∈ {female div/dep/mar, female single} alors 1, sinon 0
