@@ -17,7 +17,7 @@ Objectifs pédagogiques :
 ---
 
 <details>
-  <summary><strong>💡</strong></summary>
+  <summary><strong></strong></summary>
 
 ## 2. Rappels théoriques - classification déséquilibrée et métriques adaptées
 
@@ -260,6 +260,8 @@ La détection de fraude en banque repose sur un compromis entre Recall et Precis
 
 Les institutions fixent le seuil selon leur tolérance au risque et leurs capacités opérationnelles.
 
+</details>
+
 ---
 
-</details>
+<small>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</small>
