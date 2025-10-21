@@ -91,31 +91,31 @@ Les bibliothèques Python ou R nécessaires sont gérées par **code environneme
 
 ---
 
-### 🧩 Comparatif — Dataiku vs autres outils de l'écosystème data
+### Comparatif — Dataiku vs autres outils de l'écosystème data
 
 | Outil | Type principal | Approche | Niveau de transparence | Points forts | Limites |
 |--------|----------------|-----------|-------------------------|---------------|----------|
-| **Dataiku** | Plateforme de **data science** et **ML** | **Whitebox** (no-code & code-friendly) | 🔍 Très élevé : traçabilité du Flow, explicabilité des modèles, logs, gouvernance | Collaboration, traçabilité, intégration Python/R, gouvernance | Nécessite un minimum de structure de projet |
-| **Power BI** | Outil de **Business Intelligence (BI)** | **Semi-whitebox** (formules DAX visibles mais moteur partiellement opaque) | 📊 Moyenne : scripts Power Query transparents, moteur interne fermé | Visualisations interactives, intégration Microsoft, facilité d'usage | Explicabilité faible, logique de calcul fermée |
+| **Dataiku** | Plateforme de **data science** et **ML** | **Whitebox** (no-code & code-friendly) | Très élevé : traçabilité du Flow, explicabilité des modèles, logs, gouvernance | Collaboration, traçabilité, intégration Python/R, gouvernance | Nécessite un minimum de structure de projet |
+| **Power BI** | Outil de **Business Intelligence (BI)** | **Semi-whitebox** (formules DAX visibles mais moteur partiellement opaque) | Moyenne : scripts Power Query transparents, moteur interne fermé | Visualisations interactives, intégration Microsoft, facilité d'usage | Explicabilité faible, logique de calcul fermée |
 | **Qlik Sense / Qlik View** | **BI associatif** | **Semi-whitebox** (scripts ETL visibles, moteur propriétaire opaque) | ⚙️ Moyenne : logique de chargement lisible, algorithme associatif non documenté | Analyse associative rapide, exploration intuitive | Opaque sur le moteur interne et calculs mémoire |
-| **Apache Hop** | Outil **ETL open source** | **Whitebox (open source)** | 🧱 Élevée : workflows et scripts entièrement visibles | Transparence, flexibilité, extensibilité | Pas d'interface analytique ni AutoML |
-| **Apache Doris** | **Base analytique distribuée (OLAP)** | **Whitebox (open source)** | 🔬 Élevée côté code source, mais faible côté interface utilisateur | Performances massives, SQL analytique, open source | Réservé aux profils techniques, pas d'interface visuelle |
-| **Apache NiFi** | Outil d'**ingestion et d'orchestration de flux** | **Whitebox (open source)** | ⚙️ Élevée : dataflows visibles, provenance et traçabilité natives | Ingestion en temps réel, connecteurs multiples, intégration avec Dataiku via API | Pas de moteur analytique intégré, courbe d'apprentissage initiale |
+| **Apache Hop** | Outil **ETL open source** | **Whitebox (open source)** | Élevée : workflows et scripts entièrement visibles | Transparence, flexibilité, extensibilité | Pas d'interface analytique ni AutoML |
+| **Apache Doris** | **Base analytique distribuée (OLAP)** | **Whitebox (open source)** | Élevée côté code source, mais faible côté interface utilisateur | Performances massives, SQL analytique, open source | Réservé aux profils techniques, pas d'interface visuelle |
+| **Apache NiFi** | Outil d'**ingestion et d'orchestration de flux** | **Whitebox (open source)** | Élevée : dataflows visibles, provenance et traçabilité natives | Ingestion en temps réel, connecteurs multiples, intégration avec Dataiku via API | Pas de moteur analytique intégré, courbe d'apprentissage initiale |
 
 ---
 
 ## 3. Démonstration — Import de taux de change (Banque centrale européenne)
 
-### 3.1. Jeu de données
+### Jeu de données
 
 - **Source :** Banque centrale européenne (ECB)  
 - **Accès public :** [https://nbs.sk/export/en/exchange-rate/latest/csv](https://nbs.sk/export/en/exchange-rate/latest/csv)  
 - **Format :** CSV (actualisé chaque jour ouvré vers 16:00 CET).  
-- **Colonnes typiques :** `Date`, `Currency`, `Rate`, `Amount`, `Country`.
+- **Colonnes :** `Date`, `Currency`, `Country`, `Amount`, `Rate`.
 
 ---
 
-### 3.2. Étapes de la démonstration (Dataiku Cloud - essai gratuit)
+### 3.2. Étapes de la démonstration
 
 #### Étape 1 : création du projet
 
@@ -152,7 +152,7 @@ Les bibliothèques Python ou R nécessaires sont gérées par **code environneme
 
 **Question :**  
 - Quelle devise a actuellement le taux de conversion le plus élevé ?  
-  <details><summary>Réponse</summary>Les devises peu courantes comme l'ISK (couronne islandaise) ou le HUF (forint hongrois) affichent souvent les taux les plus élevés, car 1 EUR = plusieurs dizaines ou centaines d'unités locales.</details>
+  <details><summary>💡</summary>Les devises peu courantes comme l'ISK (couronne islandaise) ou le HUF (forint hongrois) affichent souvent les taux les plus élevés.</details>
 
 ---
 
@@ -161,7 +161,7 @@ Les bibliothèques Python ou R nécessaires sont gérées par **code environneme
 1. Depuis le **Flow**, sélectionner `fx_rates` → **+ Recipe → Prepare**.  
 2. Nommer la sortie : **`fx_rates_cleaned`**.  
 3. Dans l'éditeur Prepare :  
-   - **Supprimer** les lignes vides.  
+   - **Supprimer** les lignes vides s'il y en a.  
    - **Renommer** les colonnes si nécessaire (par ex. `Rate` → `EUR_per_unit`).  
    - **Créer** une nouvelle colonne :  
      ```
@@ -214,7 +214,7 @@ plutôt que de masquer la logique interne des traitements, la plateforme rend ch
 - Les **modèles de machine learning** exposent leurs **coefficients, métriques et graphiques d'explicabilité**.  
 - Les **scenarios** et **logs d'exécution** permettent de suivre précisément les actions réalisées.  
 
-Cette philosophie s'oppose aux outils “blackbox” qui produisent un résultat sans permettre de comprendre le cheminement.  
+Cette philosophie s'oppose aux outils dits “blackbox” qui produisent un résultat sans permettre de comprendre le cheminement.  
 Elle est particulièrement cruciale en **finance**, où la **traçabilité, la justification et la gouvernance des modèles** sont des obligations réglementaires.
 
 ---
@@ -241,6 +241,6 @@ L'objectif n'est pas de remplacer les spécialistes techniques, mais de renforce
 
 ## 8. Ressources
 
+- Présentation Dataiku : <https://www.dataiku.com/product/>  
 - Documentation Dataiku : <https://doc.dataiku.com/>  
 - Dataiku Academy (cours en ligne gratuits) : <https://academy.dataiku.com/>  
-- Présentation générale : <https://www.dataiku.com/product/>
