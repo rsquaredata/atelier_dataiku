@@ -91,7 +91,7 @@ Dataiku propose un Model Evaluation Store pour centraliser et comparer les métr
 
 </details>
 
-## 2. TP - Automatisation, Agents, LLM
+## TP - Automatisation, Agents, LLM
 
 ### A. Création d'un scénario d'automatisation
 Objectif : créer un pipeline automatique de mise à jour et d'évaluation du modèle de détection de fraude.
@@ -200,7 +200,7 @@ c. Examiner les logs, réentraîner le modèle si nécessaire, ou ajuster les se
 
 ---
 
-## 3. Perspective métier - mise en production responsable dans Dataiku
+## Perspective métier - mise en production responsable dans Dataiku
 La mise en production d'un pipeline Dataiku intégrant des modèles et des LLM engage la responsabilité opérationnelle et la qualité du pilotage.
 
 - Traçabilité et documentation :
