@@ -215,10 +215,10 @@ La mise en production d'un pipeline Dataiku intégrant des modèles et des LLM e
 ---
 
 ## Ressources
-- Documentation Dataiku - Scenarios : https ://doc.dataiku.com/dss/latest/scenarios/index.html
-- Dataiku - Agents and LLM Integrations : https ://doc.dataiku.com/dss/latest/agents/index.html
+- Documentation Dataiku - Scenarios : https://doc.dataiku.com/dss/latest/scenarios/index.html
+- Dataiku - Agents and LLM Integrations : https://doc.dataiku.com/dss/latest/agents/index.html
 - Mistral API Reference : https://docs.mistral.ai
-- Dataiku Academy -  MLOps Concepts : https://academy.dataiku.com
+- Dataiku Academy - MLOps Concepts : https://academy.dataiku.com
 
 </details>
 
