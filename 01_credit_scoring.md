@@ -1,6 +1,6 @@
 # Module 1 - Scoring de clients : exploration et modélisation supervisée
 
-## 1. Introduction et objectifs
+## Introduction et objectifs
 
 Ce module guide la création d'un modèle de scoring de crédit sous Dataiku Cloud.
 Le jeu de données utilisé est `credit_scoring.csv`, importé puis renommé `risk` dans Dataiku.
@@ -15,7 +15,9 @@ Objectifs pédagogiques :
 
 ---
 
-## 2. Rappels théoriques - statistiques descriptives et classification supervisée
+<details>
+  <summary><strong></strong></summary>
+## Rappels théoriques - statistiques descriptives et classification supervisée
 
 ### Variables
 - Variable cible : binaire $y \in \{0,1\}$ (1 = bon payeur, 0 = mauvais payeur)
@@ -56,9 +58,10 @@ $$
 | Threshold | Seuil de probabilité séparant les classes 0/1 |
 | AUC | Aire sous la courbe ROC, proche de 1 = meilleur modèle |
 
+</details>
 ---
 
-## 3. TP - Scoring clients
+## TP - Scoring clients
 
 > Pré-requis : disposer localement de `credit_scoring.csv`.
 
@@ -221,7 +224,10 @@ Si un dataset intermédiaire est créé (par exemple `risk_prepared_code`), il d
 
 ---
 
-## 4. Perspective métier
+<details>
+  <summary><strong>💡</strong></summary>
+   
+## Perspective métier
 
 Le scoring de crédit estime la probabilité de défaut d'un client.
 En contexte bancaire :
@@ -238,3 +244,5 @@ En contexte bancaire :
 - Dataiku Academy - *Classification Models* : <https://academy.dataiku.com/latest/course-detail/dataiku-ml-practitioner.html>
 - Documentation - *Machine Learning in Dataiku* : <https://doc.dataiku.com/dss/latest/machine-learning/index.html>
 - Hastie, Tibshirani, Friedman - *The Elements of Statistical Learning* (PDF libre) : <https://hastie.su.domains/ElemStatLearn/>
+
+</details>
