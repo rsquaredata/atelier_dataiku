@@ -45,7 +45,7 @@ L'atelier est structuré en quatre modules progressifs.
 
 | Fichier | Description | Hébergement |
 |----------|--------------|--------------|
-| `fx_rates_sample.csv` | Échantillon réel de taux de change publiés par la Banque centrale européenne (20/10/2025). | GitHub `/datasets/` |
+| `fx_rates_sample.csv` | Échantillon réel de taux de change publiés par la Banque centrale européenne (20/10/2025). | GitHub |
 | `credit_scoring.csv` | Données anonymisées de scoring client. | Google Drive |
 | `creditcard.csv` | Données de transactions pour la détection de fraude. | Google Drive |
 
