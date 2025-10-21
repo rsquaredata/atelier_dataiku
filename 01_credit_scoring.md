@@ -203,7 +203,7 @@ b. XGBoost ou Random Forest selon les runs
 
 ---
 
-### 3.5. Interprétation et restitution
+### E. Interprétation et restitution
 
 1. Depuis la page du modèle : **Interpretation → Feature importance, Partial dependence**
 2. Créer un dashboard : **+ New → Dashboard → risk_dashboard**
