@@ -36,8 +36,8 @@ L'atelier est structuré en quatre modules progressifs.
 |---------|-----------------------------|
 | [**Module 0 – Introduction à Dataiku Cloud**](https://github.com/rsquaredata/atelier_dataiku/blob/main/00_introduction_dataiku.md) | Démonstration guidée (taux de change BCE), création de projet et exploration de l'interface. |
 | [**Module 1 – Scoring clients**](https://github.com/rsquaredata/atelier_dataiku/blob/main/01_credit_scoring.md) | Modélisation supervisée (classification binaire), exploration, préparation et interprétation. |
-| [**Module 2 – Détection de fraude**](modules/02_fraud_detection.md) | Traitement d'un jeu de données déséquilibré, XGBoost, métriques avancées et tableau de bord. |
-| [**Module 3 – Automatisation, Agents et LLM**](modules/03_automation_agents_llm.md) | Introduction au MLOps, automatisation de pipelines, agents de surveillance et explicabilité par LLM. |
+| [**Module 2 – Détection de fraude**](https://github.com/rsquaredata/atelier_dataiku/blob/main/02_fraud_detection.md) | Traitement d'un jeu de données déséquilibré, XGBoost, métriques avancées et tableau de bord. |
+| [**Module 3 – Automatisation, Agents et LLM**](https://github.com/rsquaredata/atelier_dataiku/blob/main/03_diet_mlops.md) | Introduction au MLOps, automatisation de pipelines, agents de surveillance et explicabilité par LLM. |
 
 ---
 
@@ -62,6 +62,7 @@ Le fichier `fx_rates_sample.csv` est issu d'un export authentique de la Banque c
 - [**Slides de présentation de l'atelier**](https://www.canva.com/design/DAG1-dy-VF0/LKKCkJhkuKQ2k0Eo9ZxreQ/edit)  
 - [**Jeu de données Scoring - Google Drive**](https://drive.google.com/file/d/1OdeW5F1lQZLGxk5RcTRPnXKO63Y6DqjD/view?usp=drivesdk)  
 - [**Jeu de données Fraude - Google Drive**](https://drive.google.com/file/d/1zXWCW8hSSDz8wRZ1rvrD-3nqExQTtLp_/view?usp=drivesdk)
+- [**Corrigé**](https://github.com/rsquaredata/atelier_dataiku/blob/main/correction.md)
 
 ---
 
