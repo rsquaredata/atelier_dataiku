@@ -231,7 +231,7 @@ Ce modèle de scoring prédit le risque de défaut avec une AUC de 0,82 (avis ?)
 
 ### Vérification du Flow
 
-Le Flow doit présenter les noeuds suivants :
+Le Flow doit présenter les noeuds suivants (à noter que le dashboard n'est pas visible dans le flow):
 
 <img width="1103" height="234" alt="image" src="https://github.com/user-attachments/assets/ae8364aa-80f5-4869-8062-2bb4c1c76779" />
 
