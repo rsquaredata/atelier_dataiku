@@ -91,7 +91,7 @@ Dataiku propose un Model Evaluation Store pour centraliser et comparer les métr
 
 </details>
 
-## 2. TP - Automatisation et intégration Mistral API
+## 2. TP - Automatisation, Agents, LLM
 
 ### A. Création d'un scénario d'automatisation
 Objectif : créer un pipeline automatique de mise à jour et d'évaluation du modèle de détection de fraude.
@@ -124,7 +124,7 @@ b. Le réentraînement périodique permet de s'adapter aux évolutions des donn�
 
 ---
 
-### B. Création d'un Agent avec LLM Recipe (Mistral API)
+### B. Création d'un Agent avec LLM Recipe
 Objectif : créer un agent capable de produire automatiquement une synthèse textuelle des transactions suspectes à partir des prédictions.
 
 1. Dans le **Flow**, sélectionner `fraud_prediction` -> **+ Recipe -> LLM -> Create Recipe**
@@ -214,3 +214,7 @@ La mise en production d'un pipeline Dataiku intégrant des modèles et des LLM e
 - Dataiku Academy -  MLOps Concepts : https://academy.dataiku.com
 
 </details>
+
+---
+
+<small>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</small>
