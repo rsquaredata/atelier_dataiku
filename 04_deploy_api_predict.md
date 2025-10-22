@@ -195,6 +195,9 @@ print(f"✅ Prédictions terminées pour {len(results)} lignes.")
 > La colonne de sortie contient actuellement **toute la réponse brute** de l’API.  
 > 💡 **Défi optionnel** : vous pouvez essayer de parser la réponse pour extraire uniquement la prédiction finale.
 
+## Flow Final 
+<img width="967" height="448" alt="image" src="https://github.com/user-attachments/assets/2c1478b2-84ee-4aad-a147-bdf9b9938f2b" />
+
 ## Étape 9 - Monitoring des requêtes API
 
 1. Dans la barre supérieure de Dataiku, cliquez sur l’icône **en forme de carré (9 points)** en haut à droite.  
