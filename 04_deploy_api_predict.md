@@ -195,6 +195,18 @@ print(f"✅ Prédictions terminées pour {len(results)} lignes.")
 > La colonne de sortie contient actuellement **toute la réponse brute** de l’API.  
 > 💡 **Défi optionnel** : vous pouvez essayer de parser la réponse pour extraire uniquement la prédiction finale.
 
+## Étape 9 - Monitoring des requêtes API
+
+1. Dans la barre supérieure de Dataiku, cliquez sur l’icône **en forme de carré (9 points)** en haut à droite.  
+2. Sélectionnez **Deployer → Deploying API Services**.  
+3. Dans la section **Deployment**, cliquez sur la carte correspondant à l’API que vous avez mise en production.  
+4. Vous accédez alors à l’espace de **monitoring** de l’API, où vous pouvez observer :  
+   - les requêtes envoyées depuis votre script Python,  
+   - l’état de chaque requête (succès ou erreur),  
+   - le temps de réponse et autres métriques utiles pour suivre la performance de l’API en production.
+
+> 💡 **Astuce** : ce monitoring vous permet de vérifier que votre pipeline de prédiction fonctionne correctement en production et d’identifier rapidement toute anomalie ou lenteur.
+
 ---
 
 ## 🎯 Bilan de l’atelier
