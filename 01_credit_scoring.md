@@ -65,18 +65,19 @@ $$r_{XY}=\frac{\mathrm{Cov}(X,Y)}{s_X s_Y},\quad |r|>0{,}8 \Rightarrow \text{var
 
 ### A. Création du projet et import du dataset
 
-1. Ouvrir <https://profile.dataiku.com/> → Start free trial → Dataiku Cloud
-2. Créer un nouveau projet : **+ New Project → Blank project**
+1. Ouvrir <https://profile.dataiku.com/> → Start free trial → Dataiku Cloud (si vous n'êtes pas redirigé sur Dataiku cloud, cliquez sur ce lien <https://launchpad-dku.app.dataiku.io/> , choisissez AWS Paris et nommez votre workspace
+2. Un node s'affiche s'il est en **Running** cliquez sur Open Instance, sinon cliquez sur **...**  plus haut et puis **Turn On** 
+3. Créer un nouveau projet : **+ New Project → Blank project**
    - Project name : `Dataiku_Bank_[PrenomNom]`
    - Key : `DB_[initiales]`
-3. Importer le fichier : **Flow → + Dataset → Files → Upload your files** → sélectionner `credit_scoring.csv` → Create
-4. Renommer le dataset : **More actions (...) → Rename → risk**
-5. Vérifier le schéma : **Schema →** vérifier les types (numérique vs catégoriel) → Save
+4. Importer le fichier : **Flow (vous y êtes déjà normalement) → + Add Item (en haut à droite) → Upload → Select Files** → sélectionner `credit_scoring.csv` → Create
+5. Renommer le dataset : **Actions (à droite) → Rename → risk**
+6. Vérifier le schéma : **Onglet "Settings"(dans le dataset) → Schema →** vérifier les types (numérique vs catégoriel), s'ils sont tous en string cliquez sur **CHECK NOW** → **INFER TYPES FROM DATA** → Save
 
 ### Questions
 
 a. Quelle est la variable cible ?  
-b. Combien le dataset contient-il d'observations et de variables ?
+b. Combien le dataset contient-il d'observations et de variables (Explore) ?
 
 <details>
   <summary><strong>💡</strong></summary>
@@ -91,14 +92,15 @@ b. Dimensions : 1 000 observations et 21 variables
 ### B. Exploration initiale
 
 1. Ouvrir `risk` → **Explore**
-2. **Charts** : histogrammes pour `amount`, `duration`, `age`
-3. **Statistics → Missing values** : repérer les éventuelles valeurs manquantes
-4. **Statistics → Correlation matrix** : repérer les variables corrélées
-5. **Charts → Scatter** (`amount` vs `duration`) ; **Facet** par `credit_risk`
+2. **Charts** : histogrammes pour `amount`, `duration`, `age` (utilisez Count of records pour Y). Vous pouvez créer plusieurs graphiques ou en regrouper. 
+3. **Statistics → New Card → Automatically suggest analyses → Cocher les 4 features dans la partie droite** : Vous avez maintenant plusieurs analyses générées
+4. **Missing values** : Utilisez les analyses statistiques générées pour repérer s'il y a d'éventuelles valeurs manquantes 
+5. **Correlation matrix** : Utilisez la matrice de corrélation générée pour repérer les variables corrélées
+6. **Charts → +Chart(en bas) → Scatter** (`amount` vs `duration`) ; **Facet** par `credit_risk`
 
-### Questions
+### Questions 
 
-a. Quelle variable présente la plus forte asymétrie ?  
+a. A partir des analyses précédentes, quelle variable présente la plus forte asymétrie ?  
 b. Quelle variable semble la plus corrélée au risque ?  
 c. Y a-t-il des valeurs manquantes ?  
 d. Quelles relations observe-t-on entre `amount`, `age` et `duration` ?
@@ -120,13 +122,13 @@ d. `age` faiblement positif avec bon crédit ; `amount` et `duration` associés 
 ### C. Préparation des données et Code recipe
 
 1. Depuis le **Flow**, sélectionner `risk` → **+ Recipe → Prepare → Output : risk_prepared → Create**
-2. Nettoyer les noms de colonnes : **Columns → Rename columns** (`personal_status_sex`, `credit_history`, etc.)
-3. Créer la variable `payment_intensity` : **+ Add step → Formula → New column : payment_intensity → Expression : amount / nullif(duration,0)**
-4. Recoder `personal_status_sex` : **+ Add step → If... Then... Else → New column : Gender_bin**
+2. Renommer les noms de colonnes : **Columns → Rename columns** (`personal_status_sex`, `credit_history`, etc.)
+3. Créer la variable `payment_intensity` : **+ Add a new step → Formula → Formula for : payment_intensity → Expression : amount /duration**
+4. Recoder `personal_status_sex` : **+ Add a new step → Create If... Then... Else Statement** (aussi possible en utilisant Formula)
    - Si `personal_status_sex` ∈ {female div/dep/mar, female single} alors 1, sinon 0
    - Forcer le type en **Integer**
-5. Encodage de `job` : **+ Add step → Encoding → One-Hot encoding → Columns : job → Drop original : Yes**
-6. Exécuter la recette : **Run →** vérifier la création de `risk_prepared`
+5. Encodage de `job` : **+ Add step → Unfold → Column : job** (la variable job peut ensuite être supprimé)
+6. Exécuter la recette : **Run puis Allez dans Flow** et vérifiez la création de `risk_prepared`
 
 #### Code recipe
 
@@ -135,10 +137,22 @@ d. `age` faiblement positif avec bon crédit ; `amount` et `duration` associés 
 3. Coller le code suivant :
 
 ```python
+# -*- coding: utf-8 -*-
+import dataiku
 import pandas as pd, numpy as np
-df = input_dataset.copy()
-df["log_amount"] = np.log1p(df["amount"])
-output_dataset = df
+from dataiku import pandasutils as pdu
+
+# Read recipe inputs
+risk_prepared = dataiku.Dataset("risk_prepared")
+risk_prepared_df = risk_prepared.get_dataframe()
+
+risk_prepared_df["log_amount"] = np.log1p(risk_prepared_df["amount"])
+risk_prepared_code_df = risk_prepared_df # For this sample code, simply copy input to output
+
+
+# Write recipe outputs
+risk_prepared_code = dataiku.Dataset("risk_prepared_code")
+risk_prepared_code.write_with_schema(risk_prepared_code_df)
 ```
 
 4. Exécuter la recette : **Run →** vérifier l'apparition de la colonne `log_amount`
@@ -164,19 +178,20 @@ d. Moyenne : ≈ 7.15 ; écart-type : ≈ 0.88
 
 ### D. Construction du modèle
 
-1. Sélectionner `risk_prepared` (ou `risk_prepared_code`) → **Lab → + New → Visual analysis → Predict**
-2. Target : `credit_risk` ; Prediction type : Binary classification
+1. Sélectionner `risk_prepared` (ou `risk_prepared_code`) → **Lab → AutoML Prediction → Create Predict model on credit_risk → Choose Algorithms → Create**
+2. Target : `credit_risk` ; Prediction type : Two-class classification
 3. Features : garder toutes les colonnes utiles, exclure identifiants
 4. **Design → Algorithms** : cocher Logistic Regression, Random Forest, XGBoost
-5. **Train → Start**
+5. **Result → Train → Start**
 6. **Performance** : observer Accuracy, Recall, Precision, F1, AUC
-7. **Deploy → Create Scoring recipe → Output : risk_predictions → Create → Run**
+7. Une fois le lancement terminé, vous pouvez revenir dans **Design** changer les paramètres, les modèles,etc.. afin d'essayer d'obtenir de meilleurs mesures, vous pouvez ensuite naviguer entre sessions, models et tables pour comparer les différents modèles essayés
+8. Cliquez sur le modèle que vous souhaitez retenir puis : **Deploy**
 
 ### Questions
 
 a. À votre avis, quelle métrique faut-il privilégier en contexte bancaire ?  
 b. Y a-t-il des variables problématiques ?  
-b. Quel algorithme offre le meilleur compromis Precision/Recall ?  
+c. Quel algorithme offre le meilleur compromis Precision/Recall ?  
 
 <details>
   <summary><strong>💡</strong></summary>
@@ -189,11 +204,11 @@ b. XGBoost ou Random Forest selon les runs
 
 ---
 
-### 3.5. Interprétation et restitution
+### E. Interprétation et restitution
 
-1. Depuis la page du modèle : **Interpretation → Feature importance, Partial dependence**
-2. Créer un dashboard : **+ New → Dashboard → risk_dashboard**
-3. Ajouter : Feature importance, Confusion matrix, et un bloc **Text** avec une synthèse des résultats
+1. Cliquez sur le nom d'un modèle: Parcourez **Interpretation → Feature importance, Partial dependence**, puis **Performance → Confusion Matrix**
+2. Créer un dashboard : Dans la barre du haut, à gauche des ... > Dashboards**+ New Dashboard → risk_dashboard**
+3. Ajouter : **New Tile** Feature importance, Confusion matrix(saved model report> Add Model> Saved model report options), et un bloc **Text** avec une synthèse des résultats (Pour Feature Importance, vous pouvez aussi exporter des rapports sous forme de datasets depuis les pages des modèles)
 4. Publier le dashboard
 
 ### Questions
@@ -216,11 +231,10 @@ Ce modèle de scoring prédit le risque de défaut avec une AUC de 0,82 (avis ?)
 
 ### Vérification du Flow
 
-Le Flow doit présenter les noeuds suivants :
+Le Flow doit présenter les noeuds suivants (à noter que le dashboard n'est pas visible dans le flow):
 
-```
-risk → risk_prepared → (code) → risk_predictions → risk_dashboard
-```
+<img width="1103" height="234" alt="image" src="https://github.com/user-attachments/assets/ae8364aa-80f5-4869-8062-2bb4c1c76779" />
+
 
 Si un dataset intermédiaire est créé (par exemple `risk_prepared_code`), il doit être l'entrée de la recette de scoring.
 
