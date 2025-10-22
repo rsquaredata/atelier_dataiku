@@ -181,7 +181,7 @@ c. Risques : hallucinations, biais, fuites de données sensibles. D'où l'import
 2. (Bonus Facile) Créer un scénario de contrôle : **Scénario -> + New Scenario -> health_check_llm**
    Objectif : Exporter le dashboard créé dans le point précédent dans un e-mail
 
-### Questions (Pour poussez plus loin)
+### Questions (Pour pousser plus loin)
 a. Pourquoi pourrait-il être intéressant de surveiller à la fois le modèle et l'API LLM ?  
 b. Quels indicateurs peuvent signaler une dérive ?  
 c. Quelle serait la réaction appropriée en cas de dérive détectée ?
