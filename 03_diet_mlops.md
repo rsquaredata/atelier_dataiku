@@ -1,6 +1,6 @@
 # Module 3 - Automatisation, Agents et LLM (Diet MLOps)
 
-Ce module clôt l'atelier en abordant la mise en production simplifiée des projets Dataiku — une approche que nous appellerons ici, par commodité, « Diet MLOps » (ce qui est plus engageant que *Light* ou *Zero*).  
+Ce module aborde la mise en production simplifiée des projets Dataiku — une approche que nous appellerons ici, par commodité, « *Diet MLOps* » (ce qui est plus engageant que *Light* ou *Zero*).  
 L'idée est d'en présenter les principes essentiels sans entrer dans la complexité d'une infrastructure complète de production.
 
 L'objectif du module est de montrer comment :
