@@ -191,6 +191,7 @@ print(f"✅ Prédictions terminées pour {len(results)} lignes.")
    - Observez l’avant-dernière ligne : la réponse de l’API a bien été récupérée pour chaque ligne du dataset **Test**.
 
 > ⚠️ **Limitation** :  
+> Cependant vous pouvez aussi constater que la colonne stocke toute la réponse, malheureusement nous n'avons pas réussi à faire mieux que ça, cependant si vous vous en sentez le courage, vous pouvez relever le défi et résoudre ce problème
 > La colonne de sortie contient actuellement **toute la réponse brute** de l’API.  
 > 💡 **Défi optionnel** : vous pouvez essayer de parser la réponse pour extraire uniquement la prédiction finale.
 
