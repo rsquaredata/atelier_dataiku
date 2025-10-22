@@ -42,13 +42,9 @@ Métrique locales (dépendent du seuil) :
 - $\mathrm{F1} = 2\cdot\frac{Precision\cdot Recall}{Precision+Recall}$.
 
 Métriques globales :
-$$
-AUC-PR = \int_0^1 Precision(Recall)\,d(Recall)
-$$
+$$AUC-PR = \int_0^1 Precision(Recall)\,d(Recall)$$
 
-$$
-AUC-ROC = \int_0^1 TPR(FPR)\,d(FPR)
-$$
+$$AUC-ROC = \int_0^1 TPR(FPR)\,d(FPR)$$
 
 ### Glossaire intégré
 
