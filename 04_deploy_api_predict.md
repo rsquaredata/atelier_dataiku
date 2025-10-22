@@ -84,7 +84,8 @@ Vous verrez qu’un **nouveau node** intitulé **API Node** est apparu à côté
 
 ### Publication de l’API
 
-1. Dans la barre supérieure, cliquez sur **⋯ → API Designer** pour revenir à la page principale de conception.
+1. Dans la barre supérieure, cliquez sur <img width="452" height="90" alt="Capture d'écran 2025-10-22 015100" src="https://github.com/user-attachments/assets/90f54fea-b515-48e6-863c-8dc6abd9a780" />
+**→ API Designer** pour revenir à la page principale de conception.
 2. Cliquez sur **Publish On Deployer**.
 3. Laissez le **nom de version par défaut** (ex : *v1*).  
 4. Cliquez sur **Publish** pour déployer votre service API.
