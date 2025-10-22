@@ -207,7 +207,7 @@ b. XGBoost ou Random Forest selon les runs
 ### E. Interprétation et restitution
 
 1. Cliquez sur le nom d'un modèle: Parcourez **Interpretation → Feature importance, Partial dependence**, puis **Performance → Confusion Matrix**
-2. Créer un dashboard : Dans la barre du haut, à gauche des ... > Dashboards**+ New Dashboard → risk_dashboard**
+2. Créer un dashboard : Dans la barre du haut, à gauche des ... > Dashboards **+ New Dashboard → risk_dashboard**
 3. Ajouter : **New Tile** Feature importance, Confusion matrix(saved model report> Add Model> Saved model report options), et un bloc **Text** avec une synthèse des résultats (Pour Feature Importance, vous pouvez aussi exporter des rapports sous forme de datasets depuis les pages des modèles)
 4. Publier le dashboard
 
