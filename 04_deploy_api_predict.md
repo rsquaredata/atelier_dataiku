@@ -13,11 +13,10 @@ L’objectif est de transformer un modèle de machine learning en une API REST c
 Pour commencer :
 
 1. Rendez-vous sur le lien suivant : [https://launchpad-dku.app.dataiku.io/](https://launchpad-dku.app.dataiku.io/)
-2. Choisissez la région **AWS Paris** pour créer ou accéder à votre workspace.
-3. Si un **nœud (node)** apparaît :
+2. Si un **nœud (node)** apparaît :
    - S’il est en **Running**, cliquez sur **Open Instance**.
    - Sinon, cliquez sur **⋯ → Turn On** pour le démarrer.
-4. Une fois le workspace lancé, vous êtes prêt à créer votre premier projet Dataiku.
+3. Une fois le workspace lancé, vous êtes prêt à créer votre premier projet Dataiku.
 
 > 💡 **Astuce** :  
 > Si vous ne parvenez pas à accéder directement au Launchpad, connectez-vous via [https://profile.dataiku.com/](https://profile.dataiku.com/) puis relancez le lien ci-dessus.
