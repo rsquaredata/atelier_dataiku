@@ -4,7 +4,7 @@
 
 Ce dépôt constitue le support officiel de l'**atelier Dataiku**, élaboré dans le cadre du **Master 2 Statistique et Informatique pour la Science des donnéEs (SISE)** de l'**Université Lumière Lyon 2**.
 
-L'objectif de cet atelier est d'offrir une **mise en pratique concrète de la plateforme Dataiku** à travers des études de cas inspirés du secteur financier. Il articule des dimensions techniques (préparation, modélisation, automatisation) et méthodologiques (explicabilité, gouvernance, MLOps, IA générative).
+L'objectif de cet atelier est d'offrir une **mise en pratique concrète de la plateforme Dataiku** à travers des études de cas inspirés du secteur financier. Il articule des dimensions techniques (préparation, modélisation, automatisation, API) et méthodologiques (explicabilité, gouvernance, MLOps, IA générative).
 
 ---
 
