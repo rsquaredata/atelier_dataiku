@@ -14,7 +14,7 @@ Pour commencer :
 
 1. Rendez-vous sur le lien suivant : [https://launchpad-dku.app.dataiku.io/](https://launchpad-dku.app.dataiku.io/)
 2. Si un **nœud (node)** apparaît :
-   - S'il est en **Running**, cliquez sur **Open Instance**.
+   - S'il est en **Running**, vous pouvez passez à l'étape 2 
    - Sinon, cliquez sur **⋯ → Turn On** pour le démarrer.
 3. Une fois le workspace lancé, vous êtes prêt à créer votre premier projet Dataiku.
 
@@ -46,6 +46,7 @@ Vous verrez qu'un **nouveau node** intitulé **API Node** est apparu à côté d
    - Sélectionnez **Learning Project**.  
    - Choisissez le template **MLOps Quick Start**.  
    - Cliquez sur **Go to Flow** pour accéder au diagramme du projet.
+3. Une fois sur le flow, cliquez sur **Flow Actions** (en bas à droite), puis sur Build All (vous pouvez suivre l'execution dans la partie job (le triangle dans la barre du haut)
 
 > 💡 **Astuce** :  
 > Ce projet d'exemple présente le cycle complet de mise en production d'un modèle :  
@@ -71,10 +72,10 @@ Vous verrez qu'un **nouveau node** intitulé **API Node** est apparu à côté d
 
 ## Étape 5 - Test et publication de l'API
 
-1. Dans l'interface du modèle, ouvrez l'onglet **Test Queries** (dans le menu gauche).  
+1. Dans l'interface de l'API , ouvrez l'onglet **Test Queries** (dans le menu gauche).  
 2. Cliquez sur **Add Queries** :
    - Indiquez un nombre de requêtes, par exemple **5**.  
-   - Sélectionnez **From Dataset : Test**.  
+   - Sélectionnez **From Dataset : Test**. (Si vous n'avez pas build le flow à l'étape 3, cela peut planter
    - Cliquez sur **Add**.
 3. Les requêtes de test sont alors générées automatiquement à partir du jeu de données **Test**.
 4. Cliquez sur **Run Test Queries** pour les exécuter et visualiser les résultats.
