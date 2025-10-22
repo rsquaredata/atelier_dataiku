@@ -84,8 +84,7 @@ Vous verrez qu’un **nouveau node** intitulé **API Node** est apparu à côté
 
 ### Publication de l’API
 
-1. Dans la barre supérieure, cliquez sur <img width="452" height="90" alt="Capture d'écran 2025-10-22 015100" src="https://github.com/user-attachments/assets/90f54fea-b515-48e6-863c-8dc6abd9a780" />
-**→ API Designer** pour revenir à la page principale de conception.
+1. Dans la barre supérieure,cliquez sur **⋯ → API Designer** pour revenir à la page principale de conception.
 2. Cliquez sur **Publish On Deployer**.
 3. Laissez le **nom de version par défaut** (ex : *v1*).  
 4. Cliquez sur **Publish** pour déployer votre service API.
@@ -98,7 +97,7 @@ Vous verrez qu’un **nouveau node** intitulé **API Node** est apparu à côté
 
 ## Étape 6 - Déploiement sur le Deployer local et test final
 
-1. Dans la barre supérieure de Dataiku, cliquez sur l’icône **en forme de carré (9 points)**, en haut à droite.  
+1. Dans la barre supérieure de Dataiku, cliquez sur l’icône **en forme de carré (9 points)** <img width="452" height="90" alt="Capture d'écran 2025-10-22 015100" src="https://github.com/user-attachments/assets/2c5d7dad-4b29-4c93-8423-d55fd9621614" /> , en haut à droite.  
    > Cette icône permet d’accéder à d’autres modules : Automation, Deployer, etc.
 2. Sélectionnez **Local Deployer**.
 3. Dans le menu, cliquez sur **Deploying API Services**.
