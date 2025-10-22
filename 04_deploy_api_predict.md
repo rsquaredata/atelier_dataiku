@@ -139,9 +139,48 @@ Vous verrez qu’un **nouveau node** intitulé **API Node** est apparu à côté
 1. Dans le **recipe code**, copiez-collez le code Python suivant :  
 
 ```python
-'''
-# j'ajouterais moi-même le code
-'''
+# -*- coding: utf-8 -*-
+import dataiku
+import pandas as pd
+import dataikuapi
+
+# --- Connexion à ton API Node ---
+client = dataikuapi.APINodeClient(
+    "https://api-4f915596-501230dc-dku.eu-west-3.app.dataiku.io",
+    "job_postings"  # nom du service
+)
+
+# --- Lecture du dataset d’entrée ---
+test = dataiku.Dataset("test")
+test_df = test.get_dataframe()
+
+# --- Préparation d'une liste pour stocker les prédictions ---
+results = []
+
+# --- Boucle sur chaque ligne du dataset ---
+for i, row in test_df.iterrows():
+    record_to_predict = row.to_dict()  # transforme la ligne en dictionnaire
+    try:
+        prediction = client.predict_record("predict_fake_job", record_to_predict)
+        # Ajoute les résultats au dictionnaire
+        record_to_predict["prediction_result"] = prediction.get("result")
+        record_to_predict["prediction_proba"] = prediction.get("proba") or prediction.get("probabilities", None)
+    except Exception as e:
+        # En cas d’erreur, on garde trace de la ligne problématique
+        record_to_predict["prediction_result"] = None
+        record_to_predict["prediction_proba"] = None
+        record_to_predict["error"] = str(e)
+    results.append(record_to_predict)
+
+# --- Conversion en DataFrame ---
+pred_api_df = pd.DataFrame(results)
+
+# --- Écriture du dataset de sortie ---
+pred_api = dataiku.Dataset("pred_api")
+pred_api.write_with_schema(pred_api_df)
+
+print(f"✅ Prédictions terminées pour {len(results)} lignes.")
+
 ```
 
 > ⚠️ **Remarque** : adaptez les noms des datasets si vos datasets d’entrée/sortie diffèrent (`Test` → dataset d’entrée, `pred_api` → dataset de sortie).
