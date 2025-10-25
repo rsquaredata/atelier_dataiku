@@ -103,7 +103,7 @@ c. 0.17 % de fraudes, soit un fort déséquilibre.
    - Cette variable indique le nombre de secondes écoulées depuis le début de la collecte.  
 2. Créer une nouvelle recette de préparation : **Flow -> + Recipe -> Prepare -> Output : fraud_hour -> Create**.  
 3. Dans la préparation :  
-   - **+ Add step -> Formula -> New column : hour -> Expression : floor(Time / 3600)**.  
+   - **+ Add step -> Formula -> Formula for : hour -> Expression : floor(Time / 3600)**.  
    - Cette transformation convertit `Time` (secondes) en heures pour faire apparaître d'éventuels motifs temporels.  
    - Exécuter la recette : **Run**.  
 4. Ouvrir le dataset **fraud_hour -> Explore -> Charts**.  
