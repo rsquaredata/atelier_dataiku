@@ -253,8 +253,9 @@ Le Flow doit présenter les noeuds suivants (à noter que les dashboards ne sont
 
 <img width="1538" height="266" alt="image" src="https://github.com/user-attachments/assets/5e49072e-adf7-4e30-a050-4e336acfcc4f" />
 
-> **Astuce** : tout projet Dataiku peut être exporté pour être importé et utilisé dans un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer. Pour cela, il faut cliquer sur le nom de votre projet (en haut à gauche quand vous êtes sur son flow), puis en haut à droite vous allez cliquez sur **Actions -> Export this project**, puis cochez toutes les cases pour avoir une copie complète du projet. Une fois la préparation terminée, cliquez sur **Download** vous aurez allez un dossier .zip
-> Pour l'importer dans un nouvel espace il vous suffira de faire (dans l'espace cible) **New Project -> Import project -> Source file : le .zip**
+> **Astuce** : Tout projet Dataiku peut être exporté pour être utilisé dans un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer.
+> -  Pour cela, il faut cliquer sur le nom de votre projet (en haut à gauche quand vous êtes sur son flow), puis en haut à droite vous allez cliquez sur **Actions -> Export this project**, puis cochez toutes les cases pour avoir une copie complète du projet. Une fois la préparation terminée, cliquez sur **Download** vous aurez allez un dossier .zip .
+> -  Pour l'importer dans un nouvel espace il vous suffira de faire (dans l'espace cible) **New Project -> Import project -> Source file : le .zip**
 
 
 ---
