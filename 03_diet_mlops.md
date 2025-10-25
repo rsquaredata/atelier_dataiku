@@ -104,17 +104,19 @@ Mot de passe : mmcf nkmo gkdy udtq
 
 1. Dans le projet, ouvrir **Scenarios -> + New Scenario**.
    - Choisir **Sequence of steps** (par défaut normalement)
-   - Nom : `auto_fraud_pipeline`, **Create**
+   - Nom : `auto_fraud_pipeline`,
+   - Scenario ID : `AUTO_FRAUD_PIPELINE` -> **Create**
    - Si Auto-triggers est sur OFF, continuez, sinon mettez le sur OFF 
 2. Ajouter une étape : Dans l'onglet Steps -> **Add Step (en bas à gauche) -> Build / Train**, nommez la `Build`
    - Dans la partie Item, ajoutez les datasets : **Add Item ->  Dataset : `fraud_hour` -> ADD**, faite de même pour **`fraud_sampled`** et **`fraud_prediction`**
 3. Ajouter une étape : **Add Step -> Build/Train**, nommez la `Train`
    -    - Dans la partie Item, ajoutez le Modèle : **Add Item ->  Model : `Predict is fraud` (c'est possible qu'il se nomme différement) -> ADD**
-4. **+ Step -> Send message**
+4. **+ Step -> Send message**, nommez la `Report`
    - Type : Mail
    - Channel : 1 (smtp)
-   - Destinataire : votre e-mail
-   - Message  : "Pipeline terminé : modèle fraud réentraîné et scoré."
+   - Destinataire (To) : votre e-mail
+   - Objet (Subject) : `Dataiku [${scenarioName}: ${outcome}]`
+   - Message Source -> Changer en `Inline`, puis dans la boîte de saisie, écrire : "Pipeline terminé : modèle fraud réentraîné et scoré."
    - Ajouter vos pièces dans **Attachments -> Add Attachments** (par exemple : votre analyse du modèle)
 5. Enregistrer le scénario puis exécuter : **Run**
 
@@ -137,20 +139,35 @@ b. Le réentraînement périodique permet de s'adapter aux évolutions des donn�
 ### B. Création d'un Agent avec LLM Recipe
 Objectif : créer un agent capable de produire automatiquement une synthèse textuelle des transactions suspectes à partir des prédictions.
 
-1. Dans le **Flow**, sélectionner `fraud_prediction` -> **+ Recipe -> LLM -> Create Recipe**
+Nous allons utiliser Mistral AI cet exercice.
+Se rendre au préalable sur https://admin.mistral.ai/organization/api-keys.
+Créer un compte et renseigner les différentes informations demandées.
+
+Une fois connecté, se rendre dans les paramètres, puis API Keys : 
+<img width="1830" height="723" alt="image" src="https://github.com/user-attachments/assets/2a1a046a-3c46-4c6c-aaad-2a4926f879a9" />
+
+Appuyer sur **Create new key** :
+<img width="616" height="615" alt="image" src="https://github.com/user-attachments/assets/1d91514f-2b7e-48f4-8d8d-38299ff45773" />
+Paramétrer comme vous le souhaitez la clé API.
+*Note : Vous pouvez également entrer une date d'expiration, ce qui peut-être utile si vous décidez de partager une clé à quelqu'un d'autre pour un projet par exemple.
+Vous pouvez entrer la date de fin de votre projet par exemple, si vous souhaitez automatiquement rendre la clé inopérante au moment où le projet touche à sa fin.*
+
+1. Dans le **Flow**, sélectionner `fraud_prediction` -> **+ Recipe -> LLM recipes -> Prompt**
    - Nom : `risk_explanation`
-2. Choisir **Mistral API** comme fournisseur LLM
+2. **LLM** -> Choisir un model sous **Mistral AI**
    - Si l'API n'est pas configurée :
      - **Administration -> Connections -> + New Connection -> Mistral AI**
-     - Clé API : coller la clé fournie (`votre_clé_api`)
+     - Clé API : coller la clé générée (`votre_clé_api`)
 3. Dans la LLM Prompt :
    - Prompt :
      ```
      Vous êtes un analyste conformité.
      Résumez en quelques lignes pourquoi cette transaction est considérée comme potentiellement frauduleuse, en vous appuyant sur les variables les plus importantes du modèle.
      ```
-   - Entrée : `fraud_prediction`
+   - Aller dans l'onglet **Input/Output** (en haut à droite) et vérifier que l'input est bien défini : `fraud_prediction`
+   - Revenir sur **Settings**, appuyer sur **Save**
    - Exécuter : **Run**
+   - Une fois le job terminé, retourner dans le flow et observer les réponses dans le nouveau dataset.
 4. Tester un **Agent** : **+ New -> Agent Tools**
    - Nom : `AnalystBot`
    - Action : Tester en lui donnant des instructions du type "Retourne les lignes où is_fraud = 1"
@@ -176,13 +193,13 @@ c. Risques : hallucinations, biais, fuites de données sensibles. D'où l'import
 
 ### C. Supervision, alertes et tableau de bord
 
-1. Créer un dashboard de supervision : **Dashboard -> llm_performance**
+1. Créer un dashboard de supervision : **Dashboard -> le nommer `llm_performance`**
    - Ajouter :
      - Historique des versions de modèles (Model Evaluation Store)
      - Performance du modèle (Precision, Recall, AUC-PR)
      - Indicateur de dérive des données
      - Liste des dernières explications générées par le LLM
-2. (Bonus Facile) Créer un scénario de contrôle : **Scénario -> + New Scenario -> health_check_llm**
+2. (Bonus Facile) Créer un scénario de contrôle : **Scénario -> + New Scenario -> le nommer `health_check_llm`**
    Objectif : Exporter le dashboard créé dans le point précédent dans un e-mail
 
 ### Questions (Pour pousser plus loin)
