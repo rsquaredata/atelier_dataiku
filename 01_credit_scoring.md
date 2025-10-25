@@ -238,8 +238,9 @@ Le Flow doit présenter les noeuds suivants (à noter que le dashboard n'est pas
 
 Si un dataset intermédiaire est créé (par exemple `risk_prepared_code`), il doit être l'entrée de la recette de scoring.
 
-> **Astuce** : tout projet Dataiku peut être exporté pour être importé et utilisé dans un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer. Pour cela, il faut cliquer sur le nom de votre projet (en haut à gauche quand vous êtes sur son flow), puis en haut à droite vous allez cliquez sur **Actions -> Export this project**, puis cochez toutes les cases pour avoir une copie complète du projet. Une fois la préparation terminée, cliquez sur **Download** vous aurez allez un dossier .zip
-> Pour l'importer dans un nouvel espace il vous suffira de faire (dans l'espace cible) **New Project -> Import project -> Source file : le .zip**
+> **Astuce** : Tout projet Dataiku peut être exporté pour être utilisé dans un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer.
+> -  Pour cela, il faut cliquer sur le nom de votre projet (en haut à gauche quand vous êtes sur son flow), puis en haut à droite vous allez cliquez sur **Actions -> Export this project**, puis cochez toutes les cases pour avoir une copie complète du projet. Une fois la préparation terminée, cliquez sur **Download** vous aurez allez un dossier .zip .
+> -  Pour l'importer dans un nouvel espace il vous suffira de faire (dans l'espace cible) **New Project -> Import project -> Source file : le .zip**
 
 
 ---
