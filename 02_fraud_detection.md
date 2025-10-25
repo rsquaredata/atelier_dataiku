@@ -255,9 +255,7 @@ Le Flow doit présenter les noeuds suivants (à noter que les dashboards ne sont
 
 > **Astuce** : tout projet Dataiku peut être exporté sous forme de *bundle* (**Administration → Bundles → Export**) pour être réutilisé sur un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer.
 
-<details>
-  <summary><strong>💡</strong></summary>
-  
+
 ---
 
 ## Perspective métier
@@ -268,8 +266,8 @@ La détection de fraude en banque repose sur un compromis entre Recall et Precis
 
 Les institutions fixent le seuil selon leur tolérance au risque et leurs capacités opérationnelles.
 
-</details>
 
 ---
+
 
 <small>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</small>
