@@ -148,6 +148,7 @@ Une fois connecté, se rendre dans les paramètres, puis API Keys :
 
 Appuyer sur **Create new key** :
 <img width="616" height="615" alt="image" src="https://github.com/user-attachments/assets/1d91514f-2b7e-48f4-8d8d-38299ff45773" />
+
 Paramétrer comme vous le souhaitez la clé API.
 *Note : Vous pouvez également entrer une date d'expiration, ce qui peut-être utile si vous décidez de partager une clé à quelqu'un d'autre pour un projet par exemple.
 Vous pouvez entrer la date de fin de votre projet par exemple, si vous souhaitez automatiquement rendre la clé inopérante au moment où le projet touche à sa fin.*
