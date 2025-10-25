@@ -240,8 +240,6 @@ Si un dataset intermédiaire est créé (par exemple `risk_prepared_code`), il d
 
 > **Astuce** : tout projet Dataiku peut être exporté sous forme de *bundle* (**Administration → Bundles → Export**) pour être réutilisé sur un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer.
 
-<details>
-  <summary><strong></strong></summary>
 
 ---
    
@@ -263,7 +261,6 @@ En contexte bancaire :
 - Documentation - *Machine Learning in Dataiku* : <https://doc.dataiku.com/dss/latest/machine-learning/index.html>
 - Hastie, Tibshirani, Friedman - *The Elements of Statistical Learning* (PDF libre) : <https://hastie.su.domains/ElemStatLearn/>
 
-</details>
 
 ---
 
