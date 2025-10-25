@@ -145,7 +145,7 @@ import dataiku
 import pandas as pd
 import dataikuapi
 
-# --- Connexion à ton API Node ---
+# --- Connexion à ton API Node (A modifier) ---
 client = dataikuapi.APINodeClient(
     "https://api-4f915596-501230dc-dku.eu-west-3.app.dataiku.io",
     "job_postings"  # nom du service
@@ -186,8 +186,11 @@ print(f"✅ Prédictions terminées pour {len(results)} lignes.")
 
 > ⚠️ **Remarque** : adaptez les noms des datasets si vos datasets d'entrée/sortie diffèrent (`Test` → dataset d'entrée, `pred_api` → dataset de sortie).
 
-2. Cliquez sur **Run** pour exécuter le recipe.  
-3. Retournez dans le **Flow** et visualisez le dataset `pred_api` :
+2. Avant de l'exécuter, il faut juste modifier les paramètres de connexion à l'API (voir la ligne 7 : **client = dataikuapi.APINodeClient(...)**)
+   - Pour récupérer les paramètres de l'API, vous devez vous rendre sur le service de déploiement d'API, puis cliquez sur votre API, et cliquez dans l'onglet **Sample Code** (barre de gauche).
+   - Ensuite, le langage est sur Shell par défaut, changez le sur **Python** et vous pouvez copier la ligne 3 -> **client = dataiku.APINodeClient("...","...")** et la coller dans votre script python à la place de ce qu'il y a ligne 7.
+3. Cliquez sur **Run** pour exécuter le recipe.  
+4. Retournez dans le **Flow** et visualisez le dataset `pred_api` :
    - Construisez le flow ou les sub-flows si nécessaire.  
    - Observez l'avant-dernière ligne : la réponse de l'API a bien été récupérée pour chaque ligne du dataset **Test**.
 
