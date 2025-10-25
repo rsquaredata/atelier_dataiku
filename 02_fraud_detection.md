@@ -224,7 +224,6 @@ c. Un seuil plus bas augmente le Recall mais aussi les faux positifs.
    - Precision-Recall curve et ROC curve.  
    - Confusion matrix.  
    - Table triée des transactions à haut risque (tri sur `probability_1` décroissant).  
-   - Bloc **Text** avec synthèse des résultats.  
 3. Publier le dashboard.  
 
 ### Questions
