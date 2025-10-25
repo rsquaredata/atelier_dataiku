@@ -96,22 +96,26 @@ Dataiku propose un Model Evaluation Store pour centraliser et comparer les métr
 ### A. Création d'un scénario d'automatisation
 Objectif : créer un pipeline automatique de mise à jour et d'évaluation du modèle de détection de fraude.
 
-Au préalable se rendre dans **Administration -> Settings -> Notifications & Integrations -> Messaging channels** et remplir les données comme ci-dessous :
+Au préalable se rendre sur <img width="70" height="63" alt="image" src="https://github.com/user-attachments/assets/3e39ed95-5bd3-4fcf-b3ca-cce8ba409301" /> (en haut à gauche)
+Puis dans **Administration -> Settings -> Notifications & Integrations -> Messaging channels -> +Add Another Channel** et remplir les données comme ci-dessous :
 ![SMTP](/imgs/smtp.png)
 
 Mot de passe : mmcf nkmo gkdy udtq
 
 1. Dans le projet, ouvrir **Scenarios -> + New Scenario**.
-   - Nom : `auto_fraud_pipeline`
-   - Trigger : **Manually** (pour commencer)
-2. Ajouter une étape : **+ Step -> Build / Dataset(s)**
-   - Sélectionner les datasets : `fraud_hour`, `fraud_sampled`, `fraud_prediction`
-3. Ajouter une étape : **+ Step -> Train model(s)**
-   - Sélectionner le modèle `fraud_xgboost_model`
+   - Choisir **Sequence of steps** (par défaut normalement)
+   - Nom : `auto_fraud_pipeline`, **Create**
+   - Si Auto-triggers est sur OFF, continuez, sinon mettez le sur OFF 
+2. Ajouter une étape : Dans l'onglet Steps -> **Add Step (en bas à gauche) -> Build / Train**, nommez la `Build`
+   - Dans la partie Item, ajoutez les datasets : **Add Item ->  Dataset : `fraud_hour` -> ADD**, faite de même pour **`fraud_sampled`** et **`fraud_prediction`**
+3. Ajouter une étape : **Add Step -> Build/Train**, nommez la `Train`
+   -    - Dans la partie Item, ajoutez le Modèle : **Add Item ->  Model : `Predict is fraud` (c'est possible qu'il se nomme différement) -> ADD**
 4. **+ Step -> Send message**
+   - Type : Mail
+   - Channel : 1 (smtp)
    - Destinataire : votre e-mail
    - Message  : "Pipeline terminé : modèle fraud réentraîné et scoré."
-   - Ajouter vos pièces dans **Attachments** (par exemple : votre analyse du modèle)
+   - Ajouter vos pièces dans **Attachments -> Add Attachments** (par exemple : votre analyse du modèle)
 5. Enregistrer le scénario puis exécuter : **Run**
 
 ### Questions
