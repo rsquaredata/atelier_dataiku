@@ -76,7 +76,7 @@ $$AUC-ROC = \int_0^1 TPR(FPR)\,d(FPR)$$
 3. Créer une recette de préparation : **Flow -> + Recipe -> Prepare -> Output : fraud_prepared -> Create**.  
 4. Dans la préparation :  
    - **+ Add step -> Rename columns -> Class -> is_fraud**.  
-   - Vérifier dans **Schema** que `is_fraud` est bien de type numérique (Integer).  
+   - Vérifier dans le dataset **Settings -> Schema** que `is_fraud` est bien de type numérique (Integer).  
    - Exécuter la recette : **Run**.  
 
 ### Questions
