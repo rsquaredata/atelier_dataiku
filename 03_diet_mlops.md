@@ -144,12 +144,14 @@ Se rendre au préalable sur https://admin.mistral.ai/organization/api-keys.
 Créer un compte et renseigner les différentes informations demandées.
 
 Une fois connecté, se rendre dans les paramètres, puis API Keys : 
+
 <img width="1830" height="723" alt="image" src="https://github.com/user-attachments/assets/2a1a046a-3c46-4c6c-aaad-2a4926f879a9" />
 
 Appuyer sur **Create new key** :
+Paramétrer comme vous le souhaitez la clé API.
+
 <img width="616" height="615" alt="image" src="https://github.com/user-attachments/assets/1d91514f-2b7e-48f4-8d8d-38299ff45773" />
 
-Paramétrer comme vous le souhaitez la clé API.
 *Note : Vous pouvez également entrer une date d'expiration, ce qui peut-être utile si vous décidez de partager une clé à quelqu'un d'autre pour un projet par exemple.
 Vous pouvez entrer la date de fin de votre projet par exemple, si vous souhaitez automatiquement rendre la clé inopérante au moment où le projet touche à sa fin.*
 
