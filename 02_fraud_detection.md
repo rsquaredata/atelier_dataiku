@@ -131,8 +131,8 @@ c. Elle capte un comportement temporel, utile pour distinguer des transactions a
 
 1. Sélectionner le dataset **fraud_hour** -> **+ Recipe -> Sampling -> Output : fraud_sampled -> Create**.  
 2. Paramétrer le sampling :  
-   - **Sampling type : Stratified sampling** sur `is_fraud`.  
-   - **Sample size : 5 000 lignes**.  
+   - **Sampling method : Class rebalance(approch nb.records)**, Column : `is_fraud`.  
+   - **Nb. records : 5 000 lignes**.  
 3. Exécuter la recette : **Run**.  
 4. Ouvrir le dataset **fraud_sampled -> Explore** pour vérifier la nouvelle proportion de fraudes (nettement plus élevée).  
 
