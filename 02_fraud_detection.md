@@ -243,18 +243,21 @@ Le compromis entre Recall élevé (fraudes détectées) et Precision plus faible
 Les variables les plus contributives sont `V14`, `V10` et `V12`, toutes fortement corrélées à la probabilité de fraude.  
 Ce modèle constitue un outil d'aide à la décision permettant d'orienter les vérifications manuelles sur les transactions à risque, dans une logique de surveillance automatisée et de maîtrise du risque opérationnel.
 
+</details>
+
 ---
 
 ### Vérification du Flow
 
-Flow final attendu :  
+Le Flow doit présenter les noeuds suivants (à noter que les dashboards ne sont pas visibles dans le flow): 
 
-```
-creditcard.csv -> fraud -> fraud_prepared -> fraud_hour -> fraud_sampled -> fraud_prediction -> fraud_dashboard
-```
+<img width="1538" height="266" alt="image" src="https://github.com/user-attachments/assets/5e49072e-adf7-4e30-a050-4e336acfcc4f" />
 
-Un modèle **fraud_xgboost_model** doit apparaître dans le **Lab**.  
+> **Astuce** : tout projet Dataiku peut être exporté sous forme de *bundle* (**Administration → Bundles → Export**) pour être réutilisé sur un autre espace. Cette fonctionnalité permet de partager un pipeline complet sans devoir tout recréer.
 
+<details>
+  <summary><strong>💡</strong></summary>
+  
 ---
 
 ## Perspective métier
