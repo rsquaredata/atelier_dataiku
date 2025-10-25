@@ -159,8 +159,9 @@ b. Le sous-échantillonnage à 5 000 lignes a été choisi pour des raisons de p
 4. Dans **Train/Test set**, Mettre train ratio à 0,8.
 5. Dans **Modeling -> Algorithms**, ne garder que **XGBoost**.  
 6. Lancer l'entraînement : **Train -> Start**.  
-7. Une fois terminé, consulter **Performance -> Metrics** : Precision, Recall, F1-score, AUC-PR, AUC-ROC.  
-8. Déployer le modèle : **Deploy -> Create Scoring recipe -> Output : fraud_prediction -> Create -> Run**.  
+7. Une fois terminé, cliquer sur le nom du modèle à gauche (XGBoost(s1)) et consulter **Performance -> Metrics ands assertions** : Precision, Recall, F1-score, AUC-ROC.  
+8. Déployer le modèle : **Deploy** (en haut à droite)
+9. Retournez sur le flow, cliquez sur le dernier élement (Predict is fraud (binary), puis dans la barre des recipes à droite choisissez **Score -> Input Dataset :fraud_sampled, Output : fraud_prediction -> Create -> Run**.  
 
 > **Astuce – Réglages de XGBoost** :  L’interface Dataiku permet d'ajuster les **hyperparamètres XGBoost** sans code : `max_depth`, `learning_rate`, `n_estimators`, etc. L’onglet **Algorithm settings** offre aussi un grid search intégré. Ces options améliorent la performance du modèle tout en conservant une approche visuelle.
 
