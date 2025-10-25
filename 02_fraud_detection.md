@@ -153,13 +153,11 @@ b. Le sous-échantillonnage à 5 000 lignes a été choisi pour des raisons de p
 
 ### D. Entraînement du modèle (XGBoost)
 
-1. Sélectionner **fraud_sampled -> Lab -> + New -> Visual analysis -> Predict**.  
-2. Définir les paramètres :  
-   - **Target variable : is_fraud**.  
-   - **Prediction type : Binary classification**.  
+1. Sélectionner **fraud_sampled -> **Lab → AutoML Prediction → Create Predict model on credit_risk → Choose Algorithms → Create**.  
+2. Dans la section **Basic -> Target** -> **Target** : `is_fraud` ; **Prediction type** : Two-class classification
 3. Inclure toutes les variables sauf `Time` (inutile car redondante avec `hour`).  
-4. Dans **Design -> Algorithms**, ne garder que **XGBoost**.  
-5. Dans **Settings -> Train/Test split**, choisir 80 % / 20 %.  
+4. Dans **Train/Test set**, Mettre train ratio à 0,8.
+5. Dans **Modeling -> Algorithms**, ne garder que **XGBoost**.  
 6. Lancer l'entraînement : **Train -> Start**.  
 7. Une fois terminé, consulter **Performance -> Metrics** : Precision, Recall, F1-score, AUC-PR, AUC-ROC.  
 8. Déployer le modèle : **Deploy -> Create Scoring recipe -> Output : fraud_prediction -> Create -> Run**.  
