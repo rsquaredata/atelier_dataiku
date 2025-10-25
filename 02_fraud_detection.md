@@ -129,8 +129,8 @@ c. Elle capte un comportement temporel, utile pour distinguer des transactions a
 
 ### C. Échantillonnage et rééquilibrage
 
-1. Sélectionner le dataset **fraud_hour** -> **+ Recipe -> Sampling -> Output : fraud_sampled -> Create**.  
-2. Paramétrer le sampling :  
+1. Sélectionner le dataset **fraud_hour** -> **+ Recipe -> Prepare -> Output : fraud_sampled -> Create**.  
+2. Paramétrer le sampling (en haut à gauche dans **Sample settings** :  
    - **Sampling method : Class rebalance(approch nb.records)**, Column : `is_fraud`.  
    - **Nb. records : 5 000 lignes**.  
 3. Exécuter la recette : **Run**.  
@@ -146,7 +146,7 @@ b. Quelles autres techniques permettent de traiter le déséquilibre ?
 
 a. Un dataset trop déséquilibré pousse le modèle à prédire la classe majoritaire.  
 b. Le sous-échantillonnage à 5 000 lignes a été choisi pour des raisons de performance, mais en pratique un dataset réduit peut biaiser la distribution des variables. Pour un projet réel, on privilégiera d'autres techniques : SMOTE, pondération des classes (`class_weight`) ...
-
+c. Les 3 opérations de transformation qui ont été réalisées auraient pu être faite dans un seul bloc prepare, nous avons choisi de le faire en plusieurs pour que vous manipuliez davantage la plateforme
 </details>
 
 ---
