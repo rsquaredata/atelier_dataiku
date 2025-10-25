@@ -106,7 +106,7 @@ c. 0.17 % de fraudes, soit un fort déséquilibre.
    - **+ Add step -> Formula -> Formula for : hour -> Expression : floor(Time / 3600)**.  
    - Cette transformation convertit `Time` (secondes) en heures pour faire apparaître d'éventuels motifs temporels.  
    - Exécuter la recette : **Run**.  
-4. Ouvrir le dataset **fraud_hour -> Explore -> Charts**.  
+4. Ouvrir le dataset **fraud_hour -> Charts**.  
    - Créer un graphique en barres : X = `hour`, Y = `count`.  
    - Ajouter une **facet** sur `is_fraud` pour comparer la répartition des fraudes selon l'heure.  
 
