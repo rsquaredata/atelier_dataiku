@@ -152,28 +152,43 @@ Paramétrer comme vous le souhaitez la clé API.
 
 <img width="616" height="615" alt="image" src="https://github.com/user-attachments/assets/1d91514f-2b7e-48f4-8d8d-38299ff45773" />
 
+**Conseil : Ouvrir un fichier texte et coller la clé.**
+
 *Note : Vous pouvez également entrer une date d'expiration, ce qui peut-être utile si vous décidez de partager une clé à quelqu'un d'autre pour un projet par exemple.
 Vous pouvez entrer la date de fin de votre projet par exemple, si vous souhaitez automatiquement rendre la clé inopérante au moment où le projet touche à sa fin.*
 
-1. Dans le **Flow**, sélectionner `fraud_prediction` -> **+ Recipe -> LLM recipes -> Prompt**
+1. Afin d'accélérer les requêtes nous allons filtrer le dataset en sélectionnant 1 enregistrement. (Ne pas oublier de build le nouveau dataset)
+   - Pour cela, ajouter un **Sample/Filter**
+   - Le dataset de sortie devra se nommer `fraud_prediction_filtered`
+   - Filtrer sur is_fraud == 1
+   - Laisser **No sampling (whole data)**.
+2. Dans le **Flow**, sélectionner `fraud_prediction_filtered` -> **+ Recipe -> LLM recipes -> Prompt**
    - Nom : `risk_explanation`
-2. **LLM** -> Choisir un model sous **Mistral AI**
+3. **LLM** -> Choisir un model sous **Mistral AI**
    - Si l'API n'est pas configurée :
      - **Administration -> Connections -> + New Connection -> Mistral AI**
      - Clé API : coller la clé générée (`votre_clé_api`)
-3. Dans la LLM Prompt :
+4. Dans la LLM Prompt :
    - Prompt :
      ```
      Vous êtes un analyste conformité.
      Résumez en quelques lignes pourquoi cette transaction est considérée comme potentiellement frauduleuse, en vous appuyant sur les variables les plus importantes du modèle.
      ```
-   - Aller dans l'onglet **Input/Output** (en haut à droite) et vérifier que l'input est bien défini : `fraud_prediction`
+   - Prompt inputs -> Rentrer dans Description | Column :
+       - V24 | V24
+       - Amount | Amount
+       - V12 | V12
+   - Aller dans l'onglet **Input/Output** (en haut à droite) et vérifier que l'input est bien défini : `fraud_prediction_filtered`
    - Revenir sur **Settings**, appuyer sur **Save**
    - Exécuter : **Run**
-   - Une fois le job terminé, retourner dans le flow et observer les réponses dans le nouveau dataset.
-4. Tester un **Agent** : **+ New -> Agent Tools**
+   - Une fois le job terminé, retourner dans le flow et observer les réponses dans le nouveau dataset (selon le modèle sélectionné vous devriez avoir des réponses plus ou moins intelligentes).
+5. Tester un **Agent** : Dérouler l'onglet à côté de celui où se trouve le flow et sélectionner **Agent Tools -> New Agent Tool**
+   - Dataset Lookup
    - Nom : `AnalystBot`
-   - Action : Tester en lui donnant des instructions du type "Retourne les lignes où is_fraud = 1"
+   - Appuyer sur **Create**
+6. Compléter selon la capture d'écran ci-dessous :
+   <img width="1834" height="708" alt="image" src="https://github.com/user-attachments/assets/6b91df76-59c0-4353-b43b-6d66b774b98e" />
+
    - Exécuter : **Run Test**
 
 ### Questions
@@ -196,12 +211,13 @@ c. Risques : hallucinations, biais, fuites de données sensibles. D'où l'import
 
 ### C. Supervision, alertes et tableau de bord
 
-1. Créer un dashboard de supervision : **Dashboard -> le nommer `llm_performance`**
+1. Créer un dashboard de supervision : **Dashboard -> + New Dashboard -> le nommer `llm_performance`**
    - Ajouter :
-     - Historique des versions de modèles (Model Evaluation Store)
      - Performance du modèle (Precision, Recall, AUC-PR)
-     - Indicateur de dérive des données
-     - Liste des dernières explications générées par le LLM
+     - Courbe de ROC
+     - "What If ?"
+     - Détails de l'algorithme
+     - Liste des dernières explications générées par le LLM (indice : il faudra faire une préparation de données pour ne sélectionner que les explications)
 2. (Bonus Facile) Créer un scénario de contrôle : **Scénario -> + New Scenario -> le nommer `health_check_llm`**
    Objectif : Exporter le dashboard créé dans le point précédent dans un e-mail
 
