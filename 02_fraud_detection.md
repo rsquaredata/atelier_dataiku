@@ -187,8 +187,8 @@ c. Un Recall élevé indique peu de fraudes manquées, mais beaucoup de faux pos
 ### E. Analyse des résultats et interprétation
 
 1. Ouvrir le modèle -> **Interpretation -> Feature importance**.  
-   - Repérer les variables dominantes (`V14`, `V10`, `V12`, et éventuellement `hour`).  
-2. Ouvrir **Performance -> ROC curve** et **Precision-Recall curve**.  
+   - Repérer les variables dominantes (`V14`, `V3`, `V12`,....).  
+2. Ouvrir **Performance -> ROC & PR curve** et **PR Curve**.  
 3. Expérimenter le déplacement du **seuil de classification** pour ajuster le compromis entre Precision et Recall.  
 
 ### Questions
