@@ -64,7 +64,7 @@ Le fichier `fx_rates_sample.csv` est issu d'un export authentique de la Banque c
 - [**Jeu de données démo BCE** (*fx_rates_sample*)](https://github.com/rsquaredata/atelier_dataiku/blob/main/fx_rates_sample.csv)
 - [**Jeu de données Scoring - Google Drive**](https://drive.google.com/file/d/1OdeW5F1lQZLGxk5RcTRPnXKO63Y6DqjD/view?usp=drivesdk)  
 - [**Jeu de données Fraude - Google Drive**](https://drive.google.com/file/d/1zXWCW8hSSDz8wRZ1rvrD-3nqExQTtLp_/view?usp=drivesdk)  
-- [**Corrigé**](https://github.com/rsquaredata/atelier_dataiku/blob/main/correction.md)
+- [**Corrigé**](https://github.com/rsquaredata/atelier_dataiku/blob/main/Correction.md)
 
 ---
 
