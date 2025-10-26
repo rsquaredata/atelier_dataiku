@@ -1,30 +1,30 @@
-# 🧩 Corrigé de l’Atelier Dataiku – Master 2 SISE
+# 🧩 Corrigé de l'Atelier Dataiku - Master 2 SISE
 
-Ce document présente les **éléments de correction et de vérification** associés à l’atelier Dataiku du **Master 2 Statistique et Informatique pour la Science des Données (SISE)** – Université Lumière Lyon 2.
+Ce document présente les **éléments de correction et de vérification** associés à l'atelier Dataiku du **Master 2 Statistique et Informatique pour la Science des Données (SISE)** - Université Lumière Lyon 2.
 
 ---
 
 ## 📚 Structure générale des corrections
 
-Chaque module (ou TD) de l’atelier est accompagné de ressources permettant de **vérifier, comparer ou importer** les résultats attendus.
+Chaque module (ou TD) de l'atelier est accompagné de ressources permettant de **vérifier, comparer ou importer** les résultats attendus.
 
 | Module / TD | Support de correction | Format | Contenu principal |
 |--------------|----------------------|---------|-------------------|
-| **TD 0 – Introduction à Dataiku Cloud** | Fiche TD uniquement | `.md` | Découverte guidée (aucune correction séparée) |
-| **TD 1 – Scoring clients** | Projet Dataiku exporté | `.zip` | Préparation, modélisation supervisée et interprétation |
-| **TD 2 – Détection de fraude** | Projet Dataiku exporté | `.zip` | Gestion du déséquilibre, XGBoost, évaluation, dashboard |
-| **TD 3 – Automatisation, Agents et LLM** | Projet Dataiku exporté | `.zip` | Scénarios, agents, MLOps et explicabilité automatisée |
-| **TD 4 – API de prédiction** | Vidéo explicative | 🎥 | Déploiement d’une API de prédiction et test de requêtes |
+| **TD 0 - Introduction à Dataiku Cloud** | Fiche TD uniquement | `.md` | Découverte guidée (aucune correction séparée) |
+| **TD 1 - Scoring clients** | Projet Dataiku exporté | `.zip` | Préparation, modélisation supervisée et interprétation |
+| **TD 2 - Détection de fraude** | Projet Dataiku exporté | `.zip` | Gestion du déséquilibre, XGBoost, évaluation, dashboard |
+| **TD 3 - Automatisation, Agents et LLM** | Projet Dataiku exporté | `.zip` | Scénarios, agents, MLOps et explicabilité automatisée |
+| **TD 4 - API de prédiction** | Vidéo explicative | 🎥 | Déploiement d'une API de prédiction et test de requêtes |
 
 ---
 
 ## 💾 Accès aux fichiers de correction
 
-L’ensemble des fichiers de correction (projets `.zip` et vidéo du TD4) est disponible sur le **Google Drive officiel de l’atelier** :
+L'ensemble des fichiers de correction (projets `.zip` et vidéo du TD4) est disponible sur le **Google Drive officiel de l'atelier** :
 
-🎓 **Lien d’accès :** [➡️ Dossier Drive – Corrigés Atelier Dataiku](https://drive.google.com/drive/folders/1yWZ1AgzsKMRbm0Kn8juQdIkB2b7qRbB7?usp=sharing)
+🎓 **Lien d'accès :** [➡️ Dossier Drive - Corrigés Atelier Dataiku](https://drive.google.com/drive/folders/1yWZ1AgzsKMRbm0Kn8juQdIkB2b7qRbB7?usp=sharing)
 
-> ⚠️ **Important :** il n’est **pas nécessaire de décompresser** les fichiers `.zip`.  
+> ⚠️ **Important :** il n'est **pas nécessaire de décompresser** les fichiers `.zip`.  
 > Ils peuvent être **importés directement dans Dataiku Cloud** à partir du fichier exporté.
 
 ---
@@ -38,7 +38,7 @@ L’ensemble des fichiers de correction (projets `.zip` et vidéo du TD4) est di
 
 1. Dans votre espace Dataiku Cloud, cliquez sur **New Project → Import project**.  
 2. Choisissez comme **Source file** le fichier `.zip` téléchargé depuis le Drive.  
-3. Cliquez sur **Create** : le projet s’ouvrira avec toutes ses données, recettes et modèles.  
+3. Cliquez sur **Create** : le projet s'ouvrira avec toutes ses données, recettes et modèles.  
 4. (Optionnel) Pour consulter son historique de développement :  
    - Barre supérieure → **Version Control** → historique des modifications.
 
@@ -66,9 +66,9 @@ En suivant attentivement le TD, les réponses apparaissent au fur et à mesure d
 
 ---
 
-## 🧭 Vérification visuelle – Flows finaux
+## 🧭 Vérification visuelle - Flows finaux
 
-À la fin de chaque TD, une **capture d’écran du flow final attendu** est fournie.  
+À la fin de chaque TD, une **capture d'écran du flow final attendu** est fournie.  
 Elle permet de vérifier :
 - la **structure complète du pipeline**,  
 - les **liaisons entre recettes et datasets**,  
@@ -78,11 +78,11 @@ En suivant les étapes décrites dans le TD, **vous obtiendrez un flow identique
 
 ---
 
-## 🎥 Vidéo explicative – TD4 (API)
+## 🎥 Vidéo explicative - TD4 (API)
 
-Le **TD 4 – API de prédiction** dispose d’une **vidéo de démonstration** (disponible dans le Drive).  
+Le **TD 4 - API de prédiction** dispose d'une **vidéo de démonstration** (disponible dans le Drive).  
 Elle montre en temps réel :
-- la création d’un **endpoint d’API** à partir du modèle entraîné,  
+- la création d'un **endpoint d'API** à partir du modèle entraîné,  
 - la configuration du **déploiement**,  
 - et la **vérification de la prédiction** via des requêtes tests.
 
@@ -104,7 +104,7 @@ Ce corrigé vise à :
 - **`03_.zip`** → Projet complet du TD3 (*automatisation et LLM*)  
 - **`04_.mp4`** → Vidéo de démonstration du TD4 (*API de prédiction*)
 
-> 💡 **Astuce :** Il n’est **pas nécessaire de décompresser** les fichiers `.zip`.  
+> 💡 **Astuce :** Il n'est **pas nécessaire de décompresser** les fichiers `.zip`.  
 > Ils peuvent être **importés directement** dans votre espace Dataiku Cloud via  
 > `New Project → Import project → Source file : votre .zip`.
 
@@ -118,4 +118,4 @@ Ce corrigé vise à :
 **Usage strictement académique.**  
 Toute diffusion ou réutilisation à des fins commerciales est interdite sans autorisation préalable.  
 
-_Ce corrigé fait partie intégrante de l’atelier Dataiku du Master 2 SISE – Université Lumière Lyon 2 (promotion 2025–2026)._
+_Ce corrigé fait partie intégrante de l'atelier Dataiku du Master 2 SISE - Université Lumière Lyon 2 (promotion 2025-2026)._
