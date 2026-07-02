@@ -263,4 +263,4 @@ La mise en production d'un pipeline Dataiku intégrant des modèles et des LLM e
 
 ---
 
-<small>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</small>
+<sub>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</sub>
