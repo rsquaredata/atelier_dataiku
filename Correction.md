@@ -119,3 +119,7 @@ Ce corrigé vise à :
 Toute diffusion ou réutilisation à des fins commerciales est interdite sans autorisation préalable.  
 
 _Ce corrigé fait partie intégrante de l'atelier Dataiku du Master 2 SISE - Université Lumière Lyon 2 (promotion 2025-2026)._
+
+---
+
+<sub>[Retour à la page d'accueil](README.md)</sub>
