@@ -258,4 +258,4 @@ Dans un contexte financier, Dataiku aide à concilier :
 </details>
 ---
 
-<sub>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</sub>
+<sub>[Retour à la page d'accueil](README.md)</sub>
