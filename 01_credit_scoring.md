@@ -266,4 +266,4 @@ En contexte bancaire :
 
 ---
 
-<sub>[**Page d'accueil**](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</sub>
+<sub>[Retour à la page d'accueil](README.md)</sub>
