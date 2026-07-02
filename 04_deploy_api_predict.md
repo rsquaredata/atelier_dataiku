@@ -230,5 +230,5 @@ Vous avez appris à :
 
 ---
 
-<small>[Retour à la page d'accueil](https://github.com/rsquaredata/atelier_dataiku/blob/main/README.md)</small>
+<sub>[Retour à la page d'accueil](README.md)</sub>
 
